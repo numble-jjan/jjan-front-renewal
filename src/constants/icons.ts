@@ -1,6 +1,6 @@
 export { default as CAMERA_GRAY } from "../assets/icons/icon-camera-gray.svg";
 // export { default as CAMERA } from "@/assets/icons/icon-camera.svg";
-// export { default as CACEL } from "@/assets/icons/icon-cancel.svg";
+export { default as CANCEL } from "../assets/icons/icon-cancel.svg";
 // export { default as CIRCLE_LOCATION } from "@/assets/icons/icon-circle-location.svg";
 // export { default as COMMUNITY_SERVICE } from "@/assets/icons/icon-community-service.svg";
 // export { default as COMMUNITY } from "@/assets/icons/icon-community.svg";
