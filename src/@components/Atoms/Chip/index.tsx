@@ -1,17 +1,24 @@
 import React from "react";
 import * as Styled from "./index.styles";
+
 import { badge } from "../../../styles/theme";
+import { ReactComponent as Cancellation } from "../../../assets/icons/icon-cancel.svg";
 
 interface Props {
   text: string;
   cacellation: boolean;
+  onClick: () => void;
 }
-// todo : SVG Component로 만든 캔슬 아이콘이 들어가야함.
-const Chip = ({ text, cacellation }: Props) => {
+
+const Chip = ({ text, cacellation, onClick }: Props) => {
   return (
     <Styled.Container style={badge.gray}>
       {text}
-      {cacellation && "x"}
+      {cacellation && (
+        <Styled.Circle onClick={onClick}>
+          <Cancellation />
+        </Styled.Circle>
+      )}
     </Styled.Container>
   );
 };
