@@ -1,5 +1,6 @@
 const path = require("path");
 const tsconfigPaths = require("vite-tsconfig-paths").default;
+const svgrPlugin = require("vite-plugin-svgr");
 
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -15,12 +16,15 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  viteFinal: async config => {
-    config.plugins.push(
+  async viteFinal(config, { configType }) {
+    config.plugins = [
+      ...config.plugins,
+      svgrPlugin({}),
       tsconfigPaths({
         projects: [path.resolve(path.dirname(__dirname), "tsconfig.json")],
       }),
-    );
+    ];
+
     return config;
   },
 };
