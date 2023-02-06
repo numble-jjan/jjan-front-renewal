@@ -2,6 +2,7 @@ import React from "react";
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Card from "./index";
+import DetailLink from "@/@components/Molecule/DetailLink";
 
 export default {
   title: "Atoms/Card",
@@ -11,9 +12,16 @@ export default {
 
 const Template: ComponentStory<typeof Card> = args => <Card {...args} />;
 
-const H1 = <h1>Test Text</h1>;
-
 export const Default = Template.bind({});
 Default.args = {
-  children: H1,
+  children: <h1>Test Text</h1>,
+};
+
+export const WithDetailLink = Template.bind({});
+WithDetailLink.args = {
+  children: (
+    <DetailLink>
+      <h1>Test Text</h1>
+    </DetailLink>
+  ),
 };
