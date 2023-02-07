@@ -1,9 +1,9 @@
 import React from "react";
 
+import * as Styled from "./index.styles";
 import Text from "@/@components/Atoms/Text";
 import Divider from "@/@components/Atoms/Divider";
 
-import * as Styled from "./index.styles";
 import { color, font } from "@/styles/theme";
 
 interface Props {
@@ -31,4 +31,5 @@ const TitleBar = ({ content, required, ...rest }: Props) => {
     </Styled.Container>
   );
 };
+
 export default TitleBar;
