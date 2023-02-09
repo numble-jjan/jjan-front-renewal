@@ -41,47 +41,26 @@ export const btn_board_inactive = {
   height: "50px",
 };
 
-type Img = {
-  profileLarge: CSSProperties;
-  porfileMedium: CSSProperties;
-  innerTagCircle: CSSProperties;
-  smallCircle: CSSProperties;
-  mediumCircle: CSSProperties;
+export type ProfileFormat = "setting" | "profile" | "author" | "comment";
+export type AvartarSizeName = "setting" | "profile" | "author" | "comment";
+export type Size = { height: string; width: string };
+export type AvartarSize = {
+  [key in AvartarSizeName]: Size;
 };
-export const img: Img = {
-  profileLarge: {
-    width: "75px",
+export const avartarSize: AvartarSize = {
+  setting: {
     height: "75px",
+    width: "75px",
   },
-  porfileMedium: {
-    width: "50px",
+  profile: {
+    height: "60px",
+    width: "60px",
+  },
+  author: {
     height: "50px",
-  },
-  innerTagCircle: {
-    width: "16px",
-    height: "16px",
-    backgroundColor: `rgba(0,0,0,0.6)`,
-    borderRadius: "50%",
-    padding: "3px",
-  },
-  smallCircle: {
-    width: "28px",
-    height: "28px",
-    backgroundColor: `${color.purple}`,
-    backgroundPosition: "center",
-    borderRadius: "50%",
-    backgroundSize: "1px",
-    padding: "6px",
-  },
-  mediumCircle: {
     width: "50px",
-    height: "50px",
-    backgroundColor: `${color.purple}`,
-    backgroundPosition: "center",
-    borderRadius: "50%",
-    backgroundSize: "1px",
-    padding: "6px",
   },
+  comment: { height: "40px", width: "40px" },
 };
 
 type Badge = {
