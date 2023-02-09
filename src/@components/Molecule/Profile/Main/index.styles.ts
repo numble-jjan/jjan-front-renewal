@@ -9,6 +9,7 @@ export const Details = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 10px;
 `;
 export const Description = styled.div`
   height: 100%;
