@@ -6,9 +6,9 @@ export default function getComponentByType(
   type: any,
   num?: number,
 ) {
-  if (num === undefined) num = 0;
+  if (num === undefined) num = 1;
   const childrenArray = Children.toArray(children);
   return childrenArray
     .filter(child => isValidElement(child) && child.type === type)
-    .slice(0, num + 1);
+    .slice(0, num);
 }

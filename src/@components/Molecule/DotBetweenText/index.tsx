@@ -1,7 +1,7 @@
 import React, { ReactNode } from "react";
 
-import * as Styled from "./index.styles";
 import Text from "@/@components/Atoms/Text";
+import FlexBox from "@/@components/Layout/FlexBox";
 
 import { font } from "@/styles/theme";
 
@@ -10,18 +10,18 @@ interface Props {
   right: ReactNode;
   color: string;
   size: string;
-  gap?: string;
+  gap?: number;
 }
 
 const DotBetweenText = ({ left, right, color, size, gap }: Props) => {
   return (
-    <Styled.Container gap={gap}>
+    <FlexBox direction="row" gap={gap}>
       {left}
       <Text color={color} fontSize={size} fontWeight={font.weight.regular}>
         ·
       </Text>
       {right}
-    </Styled.Container>
+    </FlexBox>
   );
 };
 

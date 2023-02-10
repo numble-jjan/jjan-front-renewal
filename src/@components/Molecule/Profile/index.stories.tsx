@@ -18,3 +18,4 @@ const Template: ComponentStory<typeof Profile> = args => (
 );
 
 export const Default = Template.bind({});
+Default.args = { format: "profile" };

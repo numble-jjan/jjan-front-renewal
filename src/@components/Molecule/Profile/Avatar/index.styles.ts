@@ -1,15 +1,13 @@
 import styled from "styled-components";
-import { avartarSize } from "@/styles/theme";
+import { profileStyles } from "@/styles/theme";
 
-import type { AvartarSizeName } from "@/styles/theme";
+import type { ProfileFormat } from "@/styles/theme";
 
-export const Wrapper = styled.div<{ size: AvartarSizeName }>`
+export const Wrapper = styled.div<{ size: ProfileFormat }>`
   border-radius: 50%;
   overflow: hidden;
-  /* width: ${({ size }) => avartarSize[size].width}; */
-  /* height: ${({ size }) => avartarSize[size].height}; */
-  width: 50px;
-  height: 50px;
+  width: ${({ size }) => profileStyles[size].width};
+  height: ${({ size }) => profileStyles[size].height};
   border: 1px solid black;
   display: flex;
   align-items: center;

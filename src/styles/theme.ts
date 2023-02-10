@@ -41,11 +41,10 @@ export const btn_board_inactive = {
   height: "50px",
 };
 
-export type ProfileFormat = "setting" | "profile" | "author" | "comment";
-export type AvartarSizeName = "setting" | "profile" | "author" | "comment";
-export type Size = { height: string; width: string };
+export type ImageSize = { height: string; width: string };
+export type AvartarFormat = "setting" | "profile" | "author" | "comment";
 export type AvartarSize = {
-  [key in AvartarSizeName]: Size;
+  [key in AvartarFormat]: ImageSize;
 };
 export const avartarSize: AvartarSize = {
   setting: {
@@ -61,6 +60,17 @@ export const avartarSize: AvartarSize = {
     width: "50px",
   },
   comment: { height: "40px", width: "40px" },
+};
+
+export type ProfileFormat = "profile" | "author" | "comment";
+type ProfileStyle = { imgPadding: string } & ImageSize;
+type ProfileStyles = {
+  [key in ProfileFormat]: ProfileStyle;
+};
+export const profileStyles: ProfileStyles = {
+  profile: { imgPadding: "16px", ...avartarSize.profile },
+  author: { imgPadding: "11px", ...avartarSize.author },
+  comment: { imgPadding: "11px", ...avartarSize.comment },
 };
 
 type Badge = {
