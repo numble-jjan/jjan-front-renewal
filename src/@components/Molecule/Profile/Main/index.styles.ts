@@ -1,8 +1,13 @@
 import styled from "styled-components";
+import { profileStyles } from "@/styles/theme";
+import type { ProfileFormat } from "@/styles/theme";
 
-export const Container = styled.div`
+export const Container = styled.div<{ format: ProfileFormat }>`
   display: flex;
   width: 100%;
+  & > img {
+    padding-right: ${({ format }) => profileStyles[format].imgPadding};
+  }
 `;
 export const Details = styled.section`
   flex: 1;

@@ -1,11 +1,11 @@
 import React from "react";
 import * as Styled from "./index.styles";
 
-import type { AvartarSizeName } from "@/styles/theme";
+import type { ProfileFormat } from "@/styles/theme";
 
 interface AvartarProps {
   src: string;
-  size: AvartarSizeName;
+  size: ProfileFormat;
 }
 const Avartar = ({ src, size }: AvartarProps) => {
   return (

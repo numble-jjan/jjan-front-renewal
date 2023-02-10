@@ -1,9 +1,4 @@
-import React, {
-  Children,
-  createElement,
-  isValidElement,
-  ReactNode,
-} from "react";
+import React, { ReactNode, isValidElement } from "react";
 
 import Name from "../Name";
 import Avartar from "../Avatar";
@@ -32,7 +27,7 @@ const Main = ({ children, format }: MainProps) => {
   const [infoComponent] = getComponentByType(children, InfoType);
 
   return (
-    <Styled.Container>
+    <Styled.Container format={format}>
       {avartarComponent}
       <Styled.Details>
         <Styled.Description>
