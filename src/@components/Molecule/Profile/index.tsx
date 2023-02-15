@@ -1,14 +1,21 @@
 import Main from "./Main";
 import Avartar from "./Avatar";
+import RightDetails from "./RightDetails";
+import LeftDetails from "./LeftDetails";
+
 import Name from "./Name";
-import Info from "./Info";
-import Sub from "./Sub";
+import Address from "./Address";
+import Keywords from "./Keywords";
+import SubInfo from "./SubInfo";
 
 const Profile = Object.assign(Main, {
-  Name,
   Avartar,
-  Sub,
-  Info,
+  Name,
+  Address,
+  Keywords,
+  RightDetails,
+  LeftDetails,
+  SubInfo,
 });
 
 export default Profile;

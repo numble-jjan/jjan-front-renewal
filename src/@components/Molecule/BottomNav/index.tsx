@@ -5,7 +5,7 @@ import Text from "@/@components/Atoms/Text";
 import Divider from "@/@components/Atoms/Divider";
 
 import { BOTTOM_NAV_ITEMS } from "@/constants/items";
-import { color, font } from "@/styles/theme";
+import { color } from "@/styles/theme";
 
 interface IconProps {
   text: string;
@@ -24,8 +24,7 @@ const NavIcon = ({ text, icon, isSelected, special, onClick }: IconProps) => {
         <Icon />
         <Text
           color={color.white}
-          fontSize={font.size.menubar}
-          fontWeight={isSelected ? font.weight.bold : font.weight.regular}
+          variant={isSelected ? "f7-bold" : "f7-regular"}
         >
           {text}
         </Text>
@@ -37,10 +36,7 @@ const NavIcon = ({ text, icon, isSelected, special, onClick }: IconProps) => {
       <Icon />
       <Text
         color={isSelected === true ? color.purple : color.black}
-        fontSize={font.size.menubar}
-        fontWeight={
-          isSelected === true ? font.weight.bold : font.weight.regular
-        }
+        variant={isSelected ? "f7-bold" : "f7-regular"}
       >
         {text}
       </Text>
