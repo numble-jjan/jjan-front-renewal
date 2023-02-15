@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-// import styled from "styled-components";
+import * as Styled from "./index.styles";
 
 //todo : imageComponent로 받을 수 있는 컴포넌트를 제한하기
 interface Props {
@@ -12,10 +12,10 @@ const Uploader = ({ imageComponent }: Props) => {
   const clonedImageComponent = React.cloneElement(imageComponent);
 
   return (
-    <div>
+    <Styled.Container>
       {clonedImageComponent}
       <input type="file" ref={hiddenFileInput} />
-    </div>
+    </Styled.Container>
   );
 };
 

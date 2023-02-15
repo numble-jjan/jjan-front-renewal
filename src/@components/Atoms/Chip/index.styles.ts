@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { color, font } from "@/styles/theme";
+
 export const Container = styled.div`
   position: relative;
   display: flex;
@@ -8,7 +10,12 @@ export const Container = styled.div`
   width: max-content;
   padding: 0.5rem;
   text-align: center;
-  border: 1px solid black;
+  border: 1px solid ${color.light_gray1};
+  border-radius: 0.75rem;
+  color: ${color.dark_gray};
+  font-size: ${font.size.f5};
+  font-weight: ${font.weight.regular};
+  height: 1.5rem;
 `;
 
 export const Circle = styled.div`

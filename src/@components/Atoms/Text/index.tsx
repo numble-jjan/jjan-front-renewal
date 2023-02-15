@@ -2,22 +2,20 @@ import React, { CSSProperties, PropsWithChildren } from "react";
 
 import * as Styled from "./index.styles";
 
+import { textVariants } from "@/utils/createTextVariant";
+
+type Variant = keyof typeof textVariants;
+
 interface Props extends PropsWithChildren {
   color?: string;
-  fontSize?: number | string;
-  fontWeight?: number | string;
+  variant: Variant;
   style?: CSSProperties;
   onClick?: () => void;
 }
 
-const Text = ({
-  color,
-  fontSize,
-  fontWeight,
-  style,
-  onClick,
-  children,
-}: Props) => {
+const Text = ({ color, variant, style, onClick, children }: Props) => {
+  const { fontSize, fontWeight } = textVariants[variant || "f2-regular"];
+
   return (
     <Styled.Root
       color={color}

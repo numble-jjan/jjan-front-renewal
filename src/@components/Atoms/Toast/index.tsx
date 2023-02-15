@@ -3,7 +3,7 @@ import React from "react";
 import * as Styled from "./index.styles";
 import Text from "@/@components/Atoms/Text";
 
-import { color, font } from "@/styles/theme";
+import { color } from "@/styles/theme";
 
 interface Props {
   text: string;
@@ -11,11 +11,7 @@ interface Props {
 
 const Toast = ({ text }: Props) => (
   <Styled.Container>
-    <Text
-      color={color.white}
-      fontWeight={font.weight.regular}
-      fontSize={font.size.content}
-    >
+    <Text color={color.white} variant="f3-regular">
       {text}
     </Text>
   </Styled.Container>

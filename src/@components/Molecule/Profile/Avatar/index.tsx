@@ -1,18 +1,22 @@
 import React from "react";
+
+import AvartarInProfile from "@/@components/Atoms/Avatar";
 import * as Styled from "./index.styles";
 
-import type { ProfileFormat } from "@/styles/theme";
+import { useProfileContext } from "../Main";
 
-interface AvartarProps {
+interface Props {
   src: string;
-  size: ProfileFormat;
 }
-const Avartar = ({ src, size }: AvartarProps) => {
+
+const Avatar = ({ src }: Props) => {
+  const profile = useProfileContext();
+
   return (
-    <Styled.Wrapper size={size}>
-      <img src={src} />
+    <Styled.Wrapper format={profile}>
+      <AvartarInProfile src={src} size={profile} />
     </Styled.Wrapper>
   );
 };
 
-export default Avartar;
+export default Avatar;
