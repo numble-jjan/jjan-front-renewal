@@ -1,12 +1,14 @@
 import React, { forwardRef } from "react";
 
+import type { Ref, InputHTMLAttributes } from "react";
+
 import * as Styled from "./index.styles";
 
-type InputType = React.InputHTMLAttributes<HTMLInputElement>;
+export type InputType = InputHTMLAttributes<HTMLInputElement>;
 export type InputShape = "border" | "bottomLine";
 
 const InputBase = forwardRef<HTMLInputElement, InputType>(
-  (props: InputType, ref?: React.Ref<HTMLInputElement>) => {
+  (props: InputType, ref?: Ref<HTMLInputElement>) => {
     return <Styled.Root ref={ref} {...props} />;
   },
 );
@@ -17,12 +19,12 @@ interface IProps extends InputType {
   isValid?: boolean;
   left?: string;
   right?: string;
-  ref?: React.Ref<HTMLInputElement>;
   shape: InputShape;
+  ref?: Ref<HTMLInputElement>;
 }
 
 const Input = forwardRef<HTMLInputElement, IProps>(
-  (props: IProps, ref?: React.Ref<HTMLInputElement>) => {
+  (props: IProps, ref?: Ref<HTMLInputElement>) => {
     const { shape, left, right, isValid } = props;
     return (
       <Styled.Container isValid={isValid} shape={shape}>
