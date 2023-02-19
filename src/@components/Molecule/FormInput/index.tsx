@@ -22,7 +22,7 @@ const FormInput = (props: Props) => {
     shape,
     errorMessage,
     confirmMessage,
-    required,
+    // required,
     // isTouched,
     type,
   } = props;
