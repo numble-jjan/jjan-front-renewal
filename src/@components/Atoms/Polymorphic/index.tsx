@@ -1,22 +1,69 @@
-import React, { forwardRef } from "react";
-import type { ElementType, ComponentPropsWithRef } from "react";
+import React, { ComponentPropsWithRef, forwardRef, useRef } from "react";
+import type {
+  ComponentPropsWithoutRef,
+  PropsWithChildren,
+  ElementType,
+  ReactElement,
+} from "react";
 
-interface PolymorphicProps<T extends ElementType> {
-  as?: T;
-}
+type AsProp<C extends ElementType> = {
+  as?: C;
+};
 
-const Polymorphic = forwardRef(
-  <T extends ElementType = "div">(
-    { as, ...props }: PolymorphicProps<T>,
-    ref: ComponentPropsWithRef<T>["ref"],
+type PropsToOmit<C extends ElementType, P> = keyof (AsProp<C> & P);
+
+type PolymorphicComponentProp<
+  C extends ElementType,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  Props = {},
+> = PropsWithChildren<Props & AsProp<C>> &
+  Omit<ComponentPropsWithoutRef<C>, PropsToOmit<C, Props>>;
+
+type PolymorphicComponentPropWithRef<
+  C extends ElementType,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  Props = {},
+> = PolymorphicComponentProp<C, Props> & { ref?: PolymorphicRef<C> };
+
+type PolymorphicRef<C extends ElementType> = ComponentPropsWithRef<C>["ref"];
+
+type Rainbow =
+  | "red"
+  | "orange"
+  | "yellow"
+  | "green"
+  | "blue"
+  | "indigo"
+  | "violet";
+
+type TextProps<C extends React.ElementType> = PolymorphicComponentPropWithRef<
+  C,
+  { color?: Rainbow | "black" }
+>;
+
+type TextComponent = <C extends ElementType = "span">(
+  props: TextProps<C>,
+) => ReactElement | null;
+
+export const Text: TextComponent & { displayName?: string } = forwardRef(
+  <C extends React.ElementType = "span">(
+    { as, children, ...rest }: TextProps<C>,
+    ref?: PolymorphicRef<C>,
   ) => {
-    const Element = as || "div";
-    return <Element ref={ref} {...props} />;
+    const Component = as || "span";
+
+    return (
+      <Component {...rest} ref={ref}>
+        {children}
+      </Component>
+    );
   },
 );
 
-Polymorphic.displayName = "Polymorphic";
+Text.displayName = "Text";
 
-export default Polymorphic;
+const divRef = useRef<HTMLDivElement | null>(null);
 
-<Polymorphic as="a" />;
+<Text as="div" ref={divRef}>
+  Hello Text world
+</Text>;
