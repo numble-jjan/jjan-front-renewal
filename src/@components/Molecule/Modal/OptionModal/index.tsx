@@ -6,15 +6,20 @@ import { ReactComponent as Cancel } from "../../../../assets/icons/icon-cancel.s
 
 import { color } from "../../../../styles/theme";
 
-const OptionModal = ({ ...rest }) => {
+interface OptionModalProps {
+  options: string[];
+  // onClickOption:
+}
+
+const OptionModal = ({ options }: OptionModalProps) => {
   return (
-    <Container {...rest}>
+    <Container>
       <Header>
         더보기
         <Cancel />
       </Header>
       <Divider color={color.light_gray1} />
-      {["수정하기", "삭제하기"].map((option, index, self) => (
+      {options.map((option, index, self) => (
         <React.Fragment key={index}>
           <div>{option}</div>
           {self.length !== index + 1 && <Divider color={color.light_gray1} />}
