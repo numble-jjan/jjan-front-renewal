@@ -8,13 +8,20 @@ interface Props {
 }
 
 const Uploader = ({ imageComponent }: Props) => {
-  const hiddenFileInput = useRef<HTMLInputElement>(null);
-  const clonedImageComponent = React.cloneElement(imageComponent);
+  const hiddenInput = useRef<HTMLInputElement>(null);
+  const onClickImage = () => {
+    if (!hiddenInput.current) return;
+    hiddenInput.current.click();
+  };
+
+  const clonedImageComponent = React.cloneElement(imageComponent, {
+    onClick: onClickImage,
+  });
 
   return (
     <Styled.Container>
       {clonedImageComponent}
-      <input type="file" ref={hiddenFileInput} />
+      <input type="file" ref={hiddenInput} />
     </Styled.Container>
   );
 };
