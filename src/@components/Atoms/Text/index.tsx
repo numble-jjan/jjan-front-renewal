@@ -15,11 +15,17 @@ interface Props extends PropsWithChildren {
   onClick?: () => void;
 }
 
-const Text = ({ color, variant, style, onClick, children }: Props) => {
+const Text = ({
+  color,
+  variant,
+  style,
+  onClick,
+  children,
+  ...props
+}: Props) => {
   const { fontSize, fontWeight } = textVariants[variant || "f2-regular"];
 
   let colorVariatns = "black";
-
   if (color) {
     colorVariatns = colorVariants[color];
   }
@@ -31,6 +37,7 @@ const Text = ({ color, variant, style, onClick, children }: Props) => {
       fontWeight={fontWeight}
       style={style}
       onClick={onClick}
+      {...props}
     >
       {children}
     </Styled.Root>
