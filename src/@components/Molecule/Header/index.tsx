@@ -4,8 +4,6 @@ import Text from "../../Atoms/Text";
 import Divider from "../../Atoms/Divider";
 
 // import usePrevious from "@/@hooks/usePrevious";
-
-import { color } from "@/styles/theme";
 import { ReactComponent as Prev } from "@/assets/icons/icon-prev.svg";
 
 import * as Styled from "./index.styles";
@@ -28,7 +26,7 @@ const Header = ({ title }: Props) => {
         </Styled.IconWrapper>
         <Text variant="f1-regular">{title}</Text>
       </Styled.Container>
-      <Divider color={color.light_gray2} />
+      <Divider color="light_gray2" />
     </>
   );
 };
