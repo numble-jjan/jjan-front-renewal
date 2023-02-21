@@ -1,11 +1,11 @@
 import React from "react";
 import * as Styled from "./index.styles";
 
-import type { ProfileFormat } from "@/styles/theme";
+import type { AvartarFormat } from "@/types/avartar";
 
 interface AvartarProps {
   src: string;
-  size: ProfileFormat;
+  size: AvartarFormat;
 }
 
 const Avartar = ({ src, size }: AvartarProps) => {
