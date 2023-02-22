@@ -7,6 +7,9 @@ import Uploader from "@/@components/Atoms/Uploader";
 import Button from "@/@components/Atoms/Button";
 import Text from "@/@components/Atoms/Text";
 
+import Input from "@/@components/Atoms/Input";
+import FlexBox from "@/@components/Layout/FlexBox";
+
 import { ReactComponent as Camera } from "@/assets/icons/icon-camera.svg";
 import * as Styled from "./index.styles";
 
@@ -24,6 +27,7 @@ const ProfileSetting = () => {
       <Uploader imageComponent={<EmptyAvartar />} />
       <SettingNickname />
       <SettingLocation />
+
       <Button height="l" shape="purple" text="프로필 설정하기" />
     </Styled.Container>
   );
