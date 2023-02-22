@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
+
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
@@ -15,7 +17,7 @@ const Template: ComponentStory<typeof ConfirmModal> = args => (
 
 export const Default = Template.bind({});
 Default.args = {
-  alertMsg: "Test Alert Message",
-  confirmMsg: "Yes",
-  cancleMsg: "No",
+  message: "Test Alert Message",
+  onConfirm: () => {},
+  onCancle: () => {},
 };
