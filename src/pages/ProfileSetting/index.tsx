@@ -1,7 +1,6 @@
 import React from "react";
 
 import Header from "@/@components/Molecule/Header";
-
 import Uploader from "@/@components/Atoms/Uploader";
 import Button from "@/@components/Atoms/Button";
 
