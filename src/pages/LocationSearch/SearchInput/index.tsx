@@ -6,7 +6,10 @@ const SearchInput = () => {
     <div>
       <FormInput>
         <FormInput.InputWithButton>
-          <FormInput.InputWithButton.Input placeholder="내 지역 (동/읍/면)으로 검색" />
+          <FormInput.InputWithButton.Input
+            shape="bottomLine"
+            placeholder="내 지역 (동/읍/면)으로 검색"
+          />
           <FormInput.InputWithButton.Button text="검색하기" />
         </FormInput.InputWithButton>
       </FormInput>
