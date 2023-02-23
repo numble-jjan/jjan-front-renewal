@@ -29,7 +29,7 @@ const TitleBar = ({ content, required, ...rest }: Props) => {
         <Text variant="f2-regular">{content}</Text>
         {required && <Required />}
       </Styled.Texts>
-      <Divider color={color.black} />
+      <Divider color="black" />
     </Styled.Container>
   );
 };
