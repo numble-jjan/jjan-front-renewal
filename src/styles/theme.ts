@@ -16,6 +16,19 @@ export const color = {
   black: "#000000",
   white: "#FFFFFF",
 };
+export const colorMap = {
+  purple: "#683CED",
+  light_purple: "#925CE9",
+  orange: "#F58229",
+  light_gray1: "#DDDDDD",
+  light_gray2: "#EEEEEE",
+  light_gray3: "#F9F9F9",
+  light_gray4: "#D9D9D9",
+  gray: "#666666",
+  dark_gray: "#999999",
+  black: "#000000",
+  white: "#FFFFFF",
+};
 export type Color = keyof typeof color;
 
 export const font = {
