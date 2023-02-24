@@ -11,8 +11,8 @@ import type { PropsWithChildren } from "react";
 export type BaseProps = PropsWithChildren<{
   position?: Property.Position;
   display?: Property.Display;
-  borderRadious?: number;
-  boxShadow: Property.BoxShadow;
+  borderRadius?: number;
+  boxShadow?: Property.BoxShadow;
   backgroundColor?: Color;
 }>;
 
@@ -20,6 +20,7 @@ export const Base = styled.div<BaseProps>(props => ({
   boxSizing: "border-box",
   position: props.position,
   display: props.display,
+  borderRadius: props.borderRadius,
   backgroundColor: props.backgroundColor
     ? colorMap[props.backgroundColor]
     : undefined,
