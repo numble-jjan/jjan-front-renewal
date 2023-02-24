@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { HTMLAttributes } from "react";
+// import { HTMLAttributes } from "react";
 import { Property } from "csstype";
 import { Base, BaseProps } from "../Base";
 
-interface FlexBoxProps extends BaseProps, HTMLAttributes<Element> {
+export interface FlexBoxProps extends BaseProps {
   flexDirection?: Property.FlexDirection;
   flexWrap?: Property.FlexWrap;
   justifyContent?: Property.JustifyContent;
