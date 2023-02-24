@@ -6,7 +6,7 @@ import { InputShape } from "./index";
 export const Root = styled.input`
   width: 100%;
   height: 100%;
-  font-size: ${font.size.m};
+  font-size: ${font.size.f4};
   font-weight: ${font.weight.regular};
   line-height: 19px;
   letter-spacing: -0.325px;
