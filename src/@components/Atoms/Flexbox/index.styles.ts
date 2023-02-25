@@ -1,17 +1,6 @@
 import styled from "styled-components";
-// import { HTMLAttributes } from "react";
-import { Property } from "csstype";
-import { Base, BaseProps } from "../Base";
-
-export interface FlexBoxProps extends BaseProps {
-  flexDirection?: Property.FlexDirection;
-  flexWrap?: Property.FlexWrap;
-  justifyContent?: Property.JustifyContent;
-  alignItems?: Property.AlignItems;
-  gap?: Property.Gap;
-  columnGap?: Property.ColumnGap;
-  rowGap?: Property.RowGap;
-}
+import Base from "../Base";
+import type { FlexBoxProps } from "./index";
 
 export const FlexBox = styled(Base)<FlexBoxProps>(props => ({
   display: "flex",
