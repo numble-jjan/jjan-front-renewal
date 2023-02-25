@@ -11,7 +11,7 @@ export const Default: ComponentStory<typeof Base> = args => {
   return <Base {...args}>TEXT</Base>;
 };
 Default.args = {
-  backgroundColor: "white",
+  backgroundColor: "purple",
   borderRadius: 10,
   border: "1px solid black",
   padding: "10px",
