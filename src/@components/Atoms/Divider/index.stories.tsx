@@ -3,13 +3,13 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Divider from "./index";
 
-import { color } from "../../../styles/theme";
+import { colorMap } from "@/styles/theme";
 
 export default {
-  title: "Atoms/Divider",
+  title: "Core/Divider",
   component: Divider,
   argTypes: {
-    color: { control: "select", options: Object.values(color) },
+    color: { control: "select", options: Object.keys(colorMap) },
   },
 } as ComponentMeta<typeof Divider>;
 
