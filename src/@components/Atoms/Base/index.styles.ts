@@ -4,17 +4,8 @@
  */
 
 import styled from "styled-components";
-import { Color, colorMap } from "@/styles/theme";
-import type { Property } from "csstype";
-import type { PropsWithChildren } from "react";
-
-export type BaseProps = PropsWithChildren<{
-  position?: Property.Position;
-  display?: Property.Display;
-  borderRadius?: number;
-  boxShadow?: Property.BoxShadow;
-  backgroundColor?: Color;
-}>;
+import { colorMap } from "@/styles/theme";
+import type { BaseProps } from "./index";
 
 export const Base = styled.div<BaseProps>(props => ({
   boxSizing: "border-box",
