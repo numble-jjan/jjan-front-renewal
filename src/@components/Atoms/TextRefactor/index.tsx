@@ -1,7 +1,8 @@
 import React, { PropsWithChildren } from "react";
 import * as Styled from "./index.styles";
 import type { Property } from "csstype";
-import type { Color, TextVariant } from "@/styles/theme";
+import type { Color } from "@/styles/theme";
+import type { TextVariant } from "@/styles/textVariant";
 
 export interface TextProps extends PropsWithChildren {
   variant: TextVariant;
