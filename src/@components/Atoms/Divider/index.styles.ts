@@ -1,10 +1,7 @@
 import styled from "styled-components";
+import type { DividerProps } from "./index";
 
-interface RootProps {
-  color: string;
-}
-export const Root = styled.div<RootProps>`
+export const Divider = styled.div<DividerProps>`
   height: 1px;
   width: 100%;
-  background-color: ${({ color }) => color};
 `;

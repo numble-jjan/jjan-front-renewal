@@ -1,12 +1,11 @@
-import React, { CSSProperties } from "react";
+import React from "react";
 import * as Styled from "./index.styles";
-import { Color, color as colorMap } from "@/styles/theme";
+import type { BaseProps } from "../Base";
 
-interface Props {
-  color: Color;
-  style?: CSSProperties;
-}
-const Divider = ({ color, style }: Props) => {
-  return <Styled.Root color={colorMap[color]} style={style} />;
+export type DividerProps = BaseProps;
+
+const Divider = (props: DividerProps) => {
+  return <Styled.Divider {...props} />;
 };
+
 export default Divider;
