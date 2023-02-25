@@ -7,6 +7,8 @@ import type { Color } from "@/styles/theme";
 export type BaseProps = PropsWithChildren<{
   position?: Property.Position;
   display?: Property.Display;
+  padding?: Property.Padding;
+  margin?: Property.Margin;
   border?: Property.Border;
   borderRadius?: number;
   boxShadow?: Property.BoxShadow;

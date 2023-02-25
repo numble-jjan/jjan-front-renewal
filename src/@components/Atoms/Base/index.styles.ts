@@ -11,9 +11,12 @@ export const Base = styled.div<BaseProps>(props => ({
   boxSizing: "border-box",
   position: props.position,
   display: props.display,
+  padding: props.padding,
+  margin: props.margin,
   borderRadius: props.borderRadius,
   backgroundColor: props.backgroundColor
     ? colorMap[props.backgroundColor]
     : undefined,
   boxShadow: props.boxShadow,
+  border: props.border,
 }));
