@@ -46,6 +46,8 @@ export const font = {
     bold: "700",
   },
 };
+export type FontSize = typeof font.size;
+export type FontWeight = typeof font.weight;
 
 export const btn_board_active = {
   backgroundColor: "transparent",
