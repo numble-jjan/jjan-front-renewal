@@ -14,7 +14,7 @@ const Item = styled.div`
   border-radius: 12px;
 `;
 
-export const Flex: ComponentStory<typeof FlexBox> = args => {
+export const Default: ComponentStory<typeof FlexBox> = args => {
   return (
     <FlexBox {...args}>
       <FlexBox />
@@ -25,8 +25,7 @@ export const Flex: ComponentStory<typeof FlexBox> = args => {
     </FlexBox>
   );
 };
-Flex.storyName = "Default";
-Flex.args = {
+Default.args = {
   flexDirection: "row",
   flexWrap: "wrap",
   justifyContent: "center",
