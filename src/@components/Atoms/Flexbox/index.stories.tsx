@@ -17,7 +17,6 @@ const Item = styled.div`
 export const Default: ComponentStory<typeof FlexBox> = args => {
   return (
     <FlexBox {...args}>
-      <FlexBox />
       <Item>Item1</Item>
       <Item>Item2</Item>
       <Item>Item3</Item>
