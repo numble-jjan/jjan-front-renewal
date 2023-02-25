@@ -1,5 +1,5 @@
 import React from "react";
-import Base from ".";
+import Base from "./index";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
 export default {
