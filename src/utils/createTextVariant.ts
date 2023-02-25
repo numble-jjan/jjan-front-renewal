@@ -8,10 +8,7 @@ const { size, weight } = font;
 type FontSizeKey = keyof FontSize;
 type FontWeightKey = keyof FontWeight;
 
-export const createTextVariants = (
-  fontSizes: FontSize,
-  fontWeights: FontWeight,
-) => {
+const createTextVariants = (fontSizes: FontSize, fontWeights: FontWeight) => {
   const variants = {} as Variants;
 
   const sizeKeys = Object.keys(fontSizes) as FontSizeKey[];
@@ -30,4 +27,4 @@ export const createTextVariants = (
   return variants;
 };
 
-export const textVariants = createTextVariants(font.size, font.weight);
+export default createTextVariants;
