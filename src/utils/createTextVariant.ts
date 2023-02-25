@@ -1,15 +1,21 @@
 import { font } from "@/styles/theme";
 
 import type { Variant, Variants } from "@/types/textVariant";
-import type { Size, SizeKey, Weight, WeightKey } from "@/types/font";
+import type { FontSize, FontWeight } from "@/styles/theme";
 
 const { size, weight } = font;
 
-export const createTextVariants = (fontSizes: Size, fontWeights: Weight) => {
+type FontSizeKey = keyof FontSize;
+type FontWeightKey = keyof FontWeight;
+
+export const createTextVariants = (
+  fontSizes: FontSize,
+  fontWeights: FontWeight,
+) => {
   const variants = {} as Variants;
 
-  const sizeKeys = Object.keys(fontSizes) as SizeKey[];
-  const weightKeys = Object.keys(fontWeights) as WeightKey[];
+  const sizeKeys = Object.keys(fontSizes) as FontSizeKey[];
+  const weightKeys = Object.keys(fontWeights) as FontWeightKey[];
 
   sizeKeys.forEach(sizeKey => {
     weightKeys.forEach(weightKey => {
