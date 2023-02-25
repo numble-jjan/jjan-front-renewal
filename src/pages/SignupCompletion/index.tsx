@@ -1,7 +1,7 @@
 import React from "react";
 
 import Text from "@/@components/Atoms/Text";
-import Divider from "@/@components/Atoms/Divider";
+import Divider from "@/@components/Core/Divider";
 import FlexBox from "@/@components/Layout/FlexBox";
 import * as Styled from "./index.styles";
 import Button from "@/@components/Atoms/Button";

@@ -2,7 +2,7 @@ import React from "react";
 
 import * as Styled from "./index.styles";
 import Text from "@/@components/Atoms/Text";
-import Divider from "@/@components/Atoms/Divider";
+import Divider from "@/@components/Core/Divider";
 
 interface Props {
   content: string;

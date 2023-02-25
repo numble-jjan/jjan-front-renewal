@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 
-import Divider from "@/@components/Atoms/Divider";
+import Divider from "@/@components/Core/Divider";
 import * as Styled from "./index.styles";
 import { color } from "@/styles/theme";
 

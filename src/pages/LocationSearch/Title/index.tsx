@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import TitleBar from "@/@components/Molecule/TitleBar";
-import Divider from "@/@components/Atoms/Divider";
+import Divider from "@/@components/Core/Divider";
 
 const Title = () => {
   return (
