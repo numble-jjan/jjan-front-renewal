@@ -10,6 +10,8 @@ export default { title: "core/FlexBox", component: FlexBox } as ComponentMeta<
 
 const Item = styled.div`
   border: 1px solid black;
+  padding: 12px;
+  border-radius: 12px;
 `;
 
 export const Flex: ComponentStory<typeof FlexBox> = args => {
@@ -24,4 +26,10 @@ export const Flex: ComponentStory<typeof FlexBox> = args => {
   );
 };
 Flex.storyName = "Default";
-Flex.args = {};
+Flex.args = {
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  alignItems: "center",
+  gap: "normal",
+};
