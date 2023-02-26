@@ -1,8 +1,11 @@
 import React from "react";
 import * as Styled from "./index.styles";
-import type { BaseProps } from "../Base";
 
-export type DividerProps = BaseProps;
+import type { Color } from "@/styles/theme";
+
+export interface DividerProps {
+  color: Color;
+}
 
 const Divider = (props: DividerProps) => {
   return <Styled.Divider {...props} />;
