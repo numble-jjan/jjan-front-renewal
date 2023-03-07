@@ -27,4 +27,25 @@ const createTextVariants = (fontSizes: FontSize, fontWeights: FontWeight) => {
   return variants;
 };
 
-export default createTextVariants;
+export type TextVariant =
+  | "f1-regular"
+  | "f1-bold"
+  | "f2-regular"
+  | "f2-bold"
+  | "f3-regular"
+  | "f3-bold"
+  | "f4-regular"
+  | "f4-bold"
+  | "f5-regular"
+  | "f5-bold"
+  | "f6-regular"
+  | "f6-bold"
+  | "f7-regular"
+  | "f7-bold";
+
+export type TextVariants = {
+  [key in TextVariant]: { fontSize: string; fontWeight: string };
+};
+
+const textVariantMap = createTextVariants(font.size, font.weight);
+export default textVariantMap;

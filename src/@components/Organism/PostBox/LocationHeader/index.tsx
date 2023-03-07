@@ -1,7 +1,7 @@
 import React from "react";
 
 import Text from "@/@components/Atoms/Text";
-import Divider from "@/@components/Atoms/Divider";
+import Divider from "@/@components/Core/Divider";
 import { ReactComponent as Location } from "@/assets/icons/icon-location.svg";
 import * as Styled from "./index.styles";
 import { color } from "@/styles/theme";

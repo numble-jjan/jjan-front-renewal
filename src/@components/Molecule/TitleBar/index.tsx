@@ -2,9 +2,7 @@ import React from "react";
 
 import * as Styled from "./index.styles";
 import Text from "@/@components/Atoms/Text";
-import Divider from "@/@components/Atoms/Divider";
-
-import { color } from "@/styles/theme";
+import Divider from "@/@components/Core/Divider";
 
 interface Props {
   content: string;
@@ -14,7 +12,7 @@ interface Props {
 const Required = () => {
   return (
     <Styled.RequiredWrapper>
-      <Text color={color.purple} variant="f4-regular">
+      <Text color="purple" variant="f4-regular">
         *
       </Text>
       <Text variant="f4-regular">필수사항</Text>
@@ -29,7 +27,7 @@ const TitleBar = ({ content, required, ...rest }: Props) => {
         <Text variant="f2-regular">{content}</Text>
         {required && <Required />}
       </Styled.Texts>
-      <Divider color={color.black} />
+      <Divider color="black" />
     </Styled.Container>
   );
 };

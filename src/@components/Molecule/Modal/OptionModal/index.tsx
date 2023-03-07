@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Divider from "@/@components/Atoms/Divider";
+import Divider from "@/@components/Core/Divider";
 import { ReactComponent as Cancel } from "../../../../assets/icons/icon-cancel.svg";
 
 import { color } from "../../../../styles/theme";

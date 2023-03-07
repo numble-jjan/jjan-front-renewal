@@ -1,7 +1,7 @@
 import React from "react";
 
 import Text from "../../Atoms/Text";
-import Divider from "../../Atoms/Divider";
+import Divider from "../../Core/Divider";
 
 // import usePrevious from "@/@hooks/usePrevious";
 import { ReactComponent as Prev } from "@/assets/icons/icon-prev.svg";

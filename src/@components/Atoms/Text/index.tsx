@@ -2,11 +2,11 @@ import React, { CSSProperties, PropsWithChildren } from "react";
 
 import * as Styled from "./index.styles";
 
-import { textVariants } from "@/utils/createTextVariant";
+import { textVariantsMap } from "@/styles/theme";
 
 import { color as colorVariants, Color } from "@/styles/theme";
 
-type Variant = keyof typeof textVariants;
+type Variant = keyof typeof textVariantsMap;
 
 interface Props extends PropsWithChildren {
   color?: Color;
@@ -23,7 +23,7 @@ const Text = ({
   children,
   ...props
 }: Props) => {
-  const { fontSize, fontWeight } = textVariants[variant || "f2-regular"];
+  const { fontSize, fontWeight } = textVariantsMap[variant || "f2-regular"];
 
   let colorVariatns = "black";
   if (color) {

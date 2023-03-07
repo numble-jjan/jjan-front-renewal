@@ -10,9 +10,11 @@ export default {
   component: Profile,
 } as ComponentMeta<typeof Profile>;
 
+const imgSrc = "./img-chracter.png";
+
 const Template: ComponentStory<typeof Profile> = args => (
   <Profile {...args}>
-    <Profile.Avartar src="./profile-anonymous.png" />
+    <Profile.Avartar src={imgSrc} />
     <Profile.LeftDetails>
       <Profile.Name text="username" />
       <Profile.Keywords tags={["피카츄", "야도란"]} />
@@ -29,7 +31,7 @@ Default.args = { format: "profile" };
 
 export const ProfileView = () => (
   <Profile format="profile">
-    <Profile.Avartar src="./profile-anonymous.png" />
+    <Profile.Avartar src={imgSrc} />
     <Profile.LeftDetails>
       <Profile.Name text="username" />
       <Profile.Address text="서울 역삼 1동" />
@@ -39,7 +41,7 @@ export const ProfileView = () => (
 
 export const AuthorView = () => (
   <Profile format="author">
-    <Profile.Avartar src="./profile-anonymous.png" />
+    <Profile.Avartar src={imgSrc} />
     <Profile.LeftDetails>
       <Profile.Name text="username" />
       <Profile.Keywords tags={["감성적인", "조용한"]} />
@@ -52,7 +54,7 @@ export const AuthorView = () => (
 
 export const CommentView = () => (
   <Profile format="comment">
-    <Profile.Avartar src="./profile-anonymous.png" />
+    <Profile.Avartar src={imgSrc} />
     <Profile.LeftDetails>
       <Profile.Name text="username" />
       <Profile.SubInfo location="수색동" createdAt="4시간 전" />
