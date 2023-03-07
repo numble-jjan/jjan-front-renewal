@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
 import { color, font } from "../../../styles/theme";
 
-import type { ButtonProps, ButtonVariant } from "./index";
+import type { ButtonProps } from "./index";
+import type { ButtonVariant } from "./types";
 
 export const buttonHeight = {
   xs: "27px",
@@ -9,7 +10,7 @@ export const buttonHeight = {
   l: "50px",
 };
 
-export const BUTTON_VARIANTS: Record<ButtonVariant, ReturnType<typeof css>> = {
+export const buttonVariant: Record<ButtonVariant, ReturnType<typeof css>> = {
   gray: css`
     background-color: ${color.dark_gray};
     color: ${color.white};
@@ -43,5 +44,5 @@ export const Container = styled.div<ButtonProps>`
   border: none;
   font-weight: ${font.weight.bold};
 
-  ${prop => BUTTON_VARIANTS[prop.variant]}
+  ${prop => buttonVariant[prop.variant]}
 `;
