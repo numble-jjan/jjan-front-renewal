@@ -5,12 +5,12 @@ import type { AvartarFormat } from "@/types/avartar";
 
 interface AvartarProps {
   src: string;
-  size: AvartarFormat;
+  variant: AvartarFormat;
 }
 
-const Avartar = ({ src, size }: AvartarProps) => {
+const Avartar = ({ src, variant }: AvartarProps) => {
   return (
-    <Styled.Wrapper size={size}>
+    <Styled.Wrapper variant={variant}>
       <img src={src} />
     </Styled.Wrapper>
   );
