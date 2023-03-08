@@ -16,6 +16,7 @@ export const Container = styled.div`
   font-size: ${font.size.f5};
   font-weight: ${font.weight.regular};
   height: 1.5rem;
+  text-overflow: ellipsis;
 `;
 
 export const Circle = styled.div`
