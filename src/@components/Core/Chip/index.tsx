@@ -6,15 +6,15 @@ import { ReactComponent as Cancellation } from "@/assets/icons/icon-cancel.svg";
 interface Props {
   text: string;
   cacellation: boolean;
-  onClick?: () => void;
+  onClickDelete?: () => void;
 }
 
-const Chip = ({ text, cacellation, onClick }: Props) => {
+const Chip = ({ text, cacellation, onClickDelete }: Props) => {
   return (
     <Styled.Container>
       {text}
       {cacellation && (
-        <Styled.Circle onClick={onClick}>
+        <Styled.Circle onClick={onClickDelete}>
           <Cancellation />
         </Styled.Circle>
       )}
