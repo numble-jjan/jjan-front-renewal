@@ -1,14 +1,13 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
-import Toast from "./index";
+import Popup from "./index";
+import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
-  title: "Atoms/Toast",
-  component: Toast,
-} as ComponentMeta<typeof Toast>;
+  title: "Core/Popup",
+  component: Popup,
+} as ComponentMeta<typeof Popup>;
 
-const Template: ComponentStory<typeof Toast> = args => <Toast {...args} />;
+const Template: ComponentStory<typeof Popup> = args => <Popup {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
