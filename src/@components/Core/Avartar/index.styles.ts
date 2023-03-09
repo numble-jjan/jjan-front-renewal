@@ -7,7 +7,6 @@ export const Wrapper = styled.div<{ variant: AvartarFormat }>`
   overflow: hidden;
   width: ${({ variant }) => avartarSize[variant].width};
   height: ${({ variant }) => avartarSize[variant].height};
-  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
