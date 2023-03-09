@@ -12,7 +12,7 @@ export interface TextProps extends PropsWithChildren {
   wordBreak?: Property.WordBreak;
   textAlign?: Property.TextAlign;
   inline?: boolean;
-  lineHeight: Property.LineHeight;
+  lineHeight?: Property.LineHeight;
 }
 
 const Text = (props: TextProps) => {
