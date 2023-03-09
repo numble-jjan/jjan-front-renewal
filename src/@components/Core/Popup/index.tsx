@@ -1,9 +1,6 @@
 import React from "react";
-
+import Text from "../Text";
 import * as Styled from "./index.styles";
-import Text from "@/@components/Atoms/Text";
-
-import { color } from "@/styles/theme";
 
 interface Props {
   text: string;
@@ -11,7 +8,7 @@ interface Props {
 
 const Popup = ({ text }: Props) => (
   <Styled.Container>
-    <Text color={color.white} variant="f3-regular">
+    <Text color="white" variant="f3-regular">
       {text}
     </Text>
   </Styled.Container>
