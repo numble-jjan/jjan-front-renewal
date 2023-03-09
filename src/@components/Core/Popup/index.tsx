@@ -9,7 +9,7 @@ interface Props {
   text: string;
 }
 
-const Toast = ({ text }: Props) => (
+const Popup = ({ text }: Props) => (
   <Styled.Container>
     <Text color={color.white} variant="f3-regular">
       {text}
@@ -17,4 +17,4 @@ const Toast = ({ text }: Props) => (
   </Styled.Container>
 );
 
-export default Toast;
+export default Popup;
