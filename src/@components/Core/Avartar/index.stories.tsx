@@ -8,6 +8,7 @@ const IMG_SAMPLES = {
   sample3: "./img-avartar-sample-1.jpeg",
   sample4: "./img-avartar-sample-2.jpeg",
   sample5: "./img-avartar-sample-3.jpg",
+  error: "",
 };
 
 export default {
@@ -48,4 +49,12 @@ export const Setting: ComponentStory<typeof Avartar> = ({ ...args }) => {
 };
 Setting.args = {
   src: IMG_SAMPLES.sample1,
+};
+
+export const Error: ComponentStory<typeof Avartar> = ({ ...args }) => {
+  return <Avartar {...args}></Avartar>;
+};
+Error.args = {
+  variant: "comment",
+  src: "",
 };
