@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { color } from "@/styles/theme";
 import type { Props, FabVariant } from "./index";
 
-type ContainerProps = Omit<Props, "onClick">;
+type ContainerProps = Omit<Props, "onClick" | "element">;
 
 const fabVariant: Record<FabVariant, ReturnType<typeof css>> = {
   up: css`
