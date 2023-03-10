@@ -1,9 +1,12 @@
 import React from "react";
+import * as Styled from "./index.styles";
 
-interface Props {}
+interface Props {
+  onChange?: () => void;
+}
 
 const Textarea = (props: Props) => {
-  return <div {...props}></div>;
+  return <Styled.Container {...props} />;
 };
 
 export default Textarea;
