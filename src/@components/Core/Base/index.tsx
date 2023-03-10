@@ -5,6 +5,8 @@ import type { Property } from "csstype";
 import type { Color } from "@/styles/theme";
 
 export type BaseProps = PropsWithChildren<{
+  width?: Property.Width;
+  height?: Property.Height;
   position?: Property.Position;
   display?: Property.Display;
   padding?: Property.Padding;
