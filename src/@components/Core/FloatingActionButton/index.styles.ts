@@ -18,9 +18,6 @@ const fabVariant: Record<FabVariant, ReturnType<typeof css>> = {
 };
 
 export const Container = styled.div<ContainerProps>`
-  position: fixed;
-  left: ${props => props.left};
-  top: ${props => props.top};
   display: flex;
   justify-content: center;
   align-items: center;
