@@ -3,7 +3,7 @@ import React from "react";
 import * as Styled from "./index.styles";
 import type { Property } from "csstype";
 
-export type FabVariant = "write" | "up";
+export type FabVariant = "small" | "medium";
 export interface Props {
   variant: FabVariant;
   zIndex: Property.ZIndex;
