@@ -3,11 +3,12 @@ import Textarea from "./index";
 import Base from "../Base";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
-export default { title: "Core/Textarea", component: Textarea } as ComponentMeta<
-  typeof Textarea
->;
+export default {
+  title: "Core/Textarea",
+  component: Textarea,
+} as ComponentMeta<typeof Textarea>;
 
-export const Deafult: ComponentStory<typeof Textarea> = args => (
+export const Default: ComponentStory<typeof Textarea> = args => (
   <Textarea {...args} />
 );
 
