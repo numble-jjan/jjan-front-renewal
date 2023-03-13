@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { avartarSize } from "@/styles/theme";
-import type { AvartarFormat } from "@/types/avartar";
+import type { AvartarVariant } from "./index";
 
-export const Wrapper = styled.div<{ variant: AvartarFormat }>`
+export const Wrapper = styled.div<{ variant: AvartarVariant }>`
   border-radius: 50%;
   overflow: hidden;
   width: ${({ variant }) => avartarSize[variant].width};
