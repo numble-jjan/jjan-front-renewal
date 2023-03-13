@@ -10,6 +10,6 @@ interface Props {
 const LeftDetails = ({ children }: Props) => {
   const profile = useContext(profileContext);
 
-  return <Styled.Container format={profile}>{children}</Styled.Container>;
+  return <Styled.Container variant={profile}>{children}</Styled.Container>;
 };
 export default LeftDetails;
