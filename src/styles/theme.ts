@@ -1,5 +1,5 @@
-import type { AvartarSize } from "@/types/image";
-import type { ProfileStyles } from "@/types/profile";
+import type { AvartarSize } from "@/@components/Core/Avartar";
+import type { ProfileStyles } from "@/@components/Profile/types";
 
 export const color = {
   purple: "#683CED",
@@ -74,8 +74,6 @@ export const avartarSize: AvartarSize = {
   },
   comment: { height: "40px", width: "40px" },
 };
-
-export type ProfileFormat = "profile" | "author" | "comment";
 
 export const profileStyles: ProfileStyles = {
   profile: { imgPadding: "16px", ...avartarSize.profile },

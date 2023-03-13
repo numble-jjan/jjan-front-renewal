@@ -1,8 +1,8 @@
 import type { Variant } from "@/types/textVariant";
-import type { ProfileFormat } from "@/styles/theme";
+import type { ProfileVariant } from "./types";
 
 type FormatToVariant = {
-  [key in ProfileFormat]: Variant;
+  [key in ProfileVariant]: Variant;
 };
 
 export const MAIN_INFO: FormatToVariant = {
