@@ -1,4 +1,4 @@
-import type { AvartarSize } from "@/types/avartar";
+import type { AvartarSize } from "@/types/image";
 import type { ProfileStyles } from "@/types/profile";
 
 export const color = {
