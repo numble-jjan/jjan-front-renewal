@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useContext } from "react";
 
-import Avartar from "../ProfileAvartar";
+import ProfileAvartar from "../ProfileAvartar";
 import LeftDetails from "../LeftDetails";
 import RightDetails from "../RightDetails";
 import * as Styled from "./index.styles";
@@ -8,7 +8,7 @@ import * as Styled from "./index.styles";
 import getComponentByType from "@/utils/getComponentByType";
 import type { ProfileVariant } from "../types";
 
-const AvartarType = (<Avartar src="" />).type;
+const ProfileAvartarType = (<ProfileAvartar src="" />).type;
 const LeftDetailsType = (<LeftDetails />).type;
 const RightDetailsType = (<RightDetails />).type;
 
@@ -31,14 +31,14 @@ export interface Props {
 }
 
 const Main = ({ children, variant }: Props) => {
-  const avartar = getComponentByType(children, AvartarType);
+  const profileAvartar = getComponentByType(children, ProfileAvartarType);
   const leftDetails = getComponentByType(children, LeftDetailsType);
   const rightDetails = getComponentByType(children, RightDetailsType);
 
   return (
     <profileContext.Provider value={variant}>
       <Styled.Container>
-        {avartar}
+        {profileAvartar}
         {leftDetails}
         {rightDetails}
       </Styled.Container>
