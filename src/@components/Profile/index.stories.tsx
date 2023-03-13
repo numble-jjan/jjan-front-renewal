@@ -1,12 +1,12 @@
 import React from "react";
 
 import Profile from "./index";
-import Text from "@/@components/Atoms/Text";
+import Text from "@/@components/Core/Text";
 
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
-  title: "Molecule/Profile",
+  title: "Components/Profile",
   component: Profile,
 } as ComponentMeta<typeof Profile>;
 
@@ -20,17 +20,17 @@ const Template: ComponentStory<typeof Profile> = args => (
       <Profile.Keywords tags={["피카츄", "야도란"]} />
     </Profile.LeftDetails>
     <Profile.RightDetails>
-      {/* <Profile.Name text="anonymous" /> */}
+      <Profile.Name text="anonymous" />
       <Profile.Address text="익선동" />
     </Profile.RightDetails>
   </Profile>
 );
 
 export const Default = Template.bind({});
-Default.args = { format: "profile" };
+Default.args = { variant: "profile" };
 
 export const ProfileView = () => (
-  <Profile format="profile">
+  <Profile variant="profile">
     <Profile.Avartar src={imgSrc} />
     <Profile.LeftDetails>
       <Profile.Name text="username" />
@@ -40,7 +40,7 @@ export const ProfileView = () => (
 );
 
 export const AuthorView = () => (
-  <Profile format="author">
+  <Profile variant="author">
     <Profile.Avartar src={imgSrc} />
     <Profile.LeftDetails>
       <Profile.Name text="username" />
@@ -53,7 +53,7 @@ export const AuthorView = () => (
 );
 
 export const CommentView = () => (
-  <Profile format="comment">
+  <Profile variant="comment">
     <Profile.Avartar src={imgSrc} />
     <Profile.LeftDetails>
       <Profile.Name text="username" />
@@ -63,7 +63,7 @@ export const CommentView = () => (
 );
 
 export const FlatView = () => (
-  <Profile format="comment">
+  <Profile variant="comment">
     <Profile.LeftDetails>
       <Profile.Name text="username" />
       <Profile.SubInfo createdAt="4시간 전" />
