@@ -12,7 +12,7 @@ interface KeywordsProps {
 
 const Keywords = ({ tags }: KeywordsProps) => {
   const profile = useContext(profileContext);
-  // const parsedTags =
+
   return (
     <Styled.Wrapper>
       {tags.map((tag, index) => (
