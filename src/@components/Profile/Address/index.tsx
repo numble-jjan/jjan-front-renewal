@@ -1,17 +1,12 @@
 import React from "react";
 import Text from "@/@components/Atoms/Text";
-import * as Styled from "./index.styles";
 
 interface Props {
   text: string;
 }
 
-const Info = ({ text }: Props) => {
-  return (
-    <Styled.Wrapper>
-      <Text variant="f4-regular">{text}</Text>
-    </Styled.Wrapper>
-  );
+const Address = ({ text }: Props) => {
+  return <Text variant="f4-regular">{text}</Text>;
 };
 
-export default Info;
+export default Address;
