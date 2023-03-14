@@ -1,7 +1,7 @@
 import React from "react";
 
-import Profile from "@/@components/Molecule/Profile";
-import Text from "@/@components/Atoms/Text";
+import Profile from "@/@components/Profile";
+import Text from "@/@components/Core/Text";
 import * as Styled from "./index.styles";
 
 interface Props {
@@ -24,14 +24,14 @@ const Reply = ({
 }: Props) => {
   return (
     <Styled.Container>
-      <Profile format="comment">
+      <Profile variant="comment">
         <Profile.Avartar src={avartarSrc} />
         <Profile.LeftDetails>
           <Profile.Name text={username} />
           <Profile.SubInfo location={location} createdAt={createdAt} />
         </Profile.LeftDetails>
       </Profile>
-      <Text variant="f4-regular" style={{ lineHeight: "150%" }}>
+      <Text variant="f4-regular" lineHeight="150%">
         {replyContent}
       </Text>
       {replyLevel === 0 && <Text variant="f5-bold">답글달기</Text>}
