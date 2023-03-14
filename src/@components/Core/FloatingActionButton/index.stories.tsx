@@ -11,9 +11,9 @@ export default {
   },
 } as ComponentMeta<typeof FloatingActionButton>;
 
-export const Write: ComponentStory<typeof FloatingActionButton> = args => (
-  <FloatingActionButton {...args} variant="write" />
+export const Small: ComponentStory<typeof FloatingActionButton> = args => (
+  <FloatingActionButton {...args} variant="small" />
 );
-export const Up: ComponentStory<typeof FloatingActionButton> = args => (
-  <FloatingActionButton {...args} variant="up" />
+export const Medium: ComponentStory<typeof FloatingActionButton> = args => (
+  <FloatingActionButton {...args} variant="medium" />
 );
