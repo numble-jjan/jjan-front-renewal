@@ -8,7 +8,7 @@ import { LOCATION, SEARCH } from "@/constants/icons";
 const icons = { Empty: null, LOCATION, SEARCH };
 
 export default {
-  title: "Atoms/Input",
+  title: "Core/Input",
   component: Input,
   argTypes: {
     shape: {
