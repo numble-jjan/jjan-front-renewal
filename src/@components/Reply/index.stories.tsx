@@ -5,7 +5,7 @@ import Reply from "./index";
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
-  title: "Molecule/Reply",
+  title: "Reply",
   component: Reply,
 } as ComponentMeta<typeof Reply>;
 
