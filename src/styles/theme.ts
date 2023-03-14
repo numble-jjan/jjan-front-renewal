@@ -1,5 +1,5 @@
-import type { AvartarSize } from "@/types/avartar";
-import type { ProfileStyles } from "@/types/profile";
+import type { AvartarSize } from "@/@components/Core/Avartar";
+import type { ProfileStyles } from "@/@components/Profile/types";
 
 export const color = {
   purple: "#683CED",
@@ -75,8 +75,6 @@ export const avartarSize: AvartarSize = {
   comment: { height: "40px", width: "40px" },
 };
 
-export type ProfileFormat = "profile" | "author" | "comment";
-
 export const profileStyles: ProfileStyles = {
   profile: { imgPadding: "16px", ...avartarSize.profile },
   author: { imgPadding: "11px", ...avartarSize.author },
@@ -88,3 +86,54 @@ export const buttonHeight = {
   m: "40px",
   l: "50px",
 };
+
+/**
+ * 추후 삭제 예정
+ */
+import type { Variant, Variants } from "@/types/textVariant";
+
+const { size, weight } = font;
+
+type FontSizeKey = keyof FontSize;
+type FontWeightKey = keyof FontWeight;
+
+const createTextVariants = (fontSizes: FontSize, fontWeights: FontWeight) => {
+  const variants = {} as Variants;
+
+  const sizeKeys = Object.keys(fontSizes) as FontSizeKey[];
+  const weightKeys = Object.keys(fontWeights) as FontWeightKey[];
+
+  sizeKeys.forEach(sizeKey => {
+    weightKeys.forEach(weightKey => {
+      const key: Variant = `${sizeKey}-${weightKey}`;
+      variants[key] = {
+        fontSize: size[sizeKey],
+        fontWeight: weight[weightKey],
+      };
+    });
+  });
+
+  return variants;
+};
+
+export type TextVariant =
+  | "f1-regular"
+  | "f1-bold"
+  | "f2-regular"
+  | "f2-bold"
+  | "f3-regular"
+  | "f3-bold"
+  | "f4-regular"
+  | "f4-bold"
+  | "f5-regular"
+  | "f5-bold"
+  | "f6-regular"
+  | "f6-bold"
+  | "f7-regular"
+  | "f7-bold";
+
+export type TextVariants = {
+  [key in TextVariant]: { fontSize: string; fontWeight: string };
+};
+
+export const textVariantsMap = createTextVariants(font.size, font.weight);

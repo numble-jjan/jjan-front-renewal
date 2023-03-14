@@ -1,10 +1,15 @@
 import React from "react";
 import * as Styled from "./index.styles";
-import type { AvartarFormat } from "@/types/avartar";
+import type { ImageSize } from "@/types/image";
+
+export type AvartarVariant = "setting" | "profile" | "author" | "comment";
+export type AvartarSize = {
+  [key in AvartarVariant]: ImageSize;
+};
 
 interface AvartarProps {
   src: string;
-  variant: AvartarFormat;
+  variant: AvartarVariant;
 }
 
 const DEFAULT_SRC = "./img-anonymous.png";
