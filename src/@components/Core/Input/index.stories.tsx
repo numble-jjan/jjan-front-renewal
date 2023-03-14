@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Input from "./index";
 
-import { LOCATION, SEARCH } from "../../../constants/icons";
+import { LOCATION, SEARCH } from "@/constants/icons";
 
 const icons = { Empty: null, LOCATION, SEARCH };
 
