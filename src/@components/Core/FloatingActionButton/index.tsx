@@ -7,12 +7,12 @@ export type FabVariant = "small" | "medium";
 export interface Props {
   variant: FabVariant;
   zIndex: Property.ZIndex;
-  element: React.FC<React.SVGProps<SVGSVGElement>>;
+  element?: React.FC<React.SVGProps<SVGSVGElement>>;
   onClick?: () => void;
 }
 
 const FloatingActionButton = ({ element, ...props }: Props) => {
-  const Element = element;
+  const Element = element || "div";
 
   return <Styled.Container {...props}>{<Element />}</Styled.Container>;
 };

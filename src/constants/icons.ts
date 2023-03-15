@@ -24,3 +24,5 @@ export { default as SELECTED_HOME } from "@/assets/icons/icon-selected-home.svg"
 export { default as SELECTED_INFORMATION } from "@/assets/icons/icon-selected-information.svg";
 export { default as SELECTED_LOCATION } from "@/assets/icons/icon-selected-location.svg";
 export { default as SELECTED_PROFILE } from "@/assets/icons/icon-selected-profile.svg";
+export { default as UP } from "@/assets/icons/icon-up.svg";
+export { default as WRITE } from "@/assets/icons/icon-write.svg";

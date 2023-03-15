@@ -3,12 +3,12 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Input from "./index";
 
-import { LOCATION, SEARCH } from "../../../constants/icons";
+import { LOCATION, SEARCH } from "@/constants/icons";
 
 const icons = { Empty: null, LOCATION, SEARCH };
 
 export default {
-  title: "Atoms/Input",
+  title: "Core/Input",
   component: Input,
   argTypes: {
     shape: {

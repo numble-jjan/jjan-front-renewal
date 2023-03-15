@@ -2,18 +2,37 @@ import React from "react";
 import FloatingActionButton from "./index";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
+import { ReactComponent as WriteIcon } from "@/assets/icons/icon-write.svg";
+import { ReactComponent as UpIcon } from "@/assets/icons/icon-up.svg";
+
+const IconMap = {
+  writeIcon: WriteIcon,
+  upIcon: UpIcon,
+};
+
 export default {
   title: "Core/FloatingActionButton",
   component: FloatingActionButton,
-  args: {
-    top: "100%",
-    left: "100%",
+  argTypes: {
+    element: {
+      control: "select",
+      options: Object.keys(IconMap),
+      mapping: IconMap,
+    },
   },
 } as ComponentMeta<typeof FloatingActionButton>;
 
-export const Write: ComponentStory<typeof FloatingActionButton> = args => (
-  <FloatingActionButton {...args} variant="write" />
+export const Default: ComponentStory<typeof FloatingActionButton> = args => (
+  <FloatingActionButton {...args} />
 );
-export const Up: ComponentStory<typeof FloatingActionButton> = args => (
-  <FloatingActionButton {...args} variant="up" />
+
+export const Small: ComponentStory<typeof FloatingActionButton> = args => (
+  <FloatingActionButton {...args} variant="small" />
 );
+
+export const Medium: ComponentStory<typeof FloatingActionButton> = args => (
+  <FloatingActionButton {...args} variant="medium" />
+);
+Medium.args = {
+  element: WriteIcon,
+};
