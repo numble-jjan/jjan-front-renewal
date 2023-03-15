@@ -13,6 +13,7 @@ export interface TextProps extends PropsWithChildren {
   textAlign?: Property.TextAlign;
   inline?: boolean;
   lineHeight?: Property.LineHeight;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 const Text = (props: TextProps) => {

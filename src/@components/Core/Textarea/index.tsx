@@ -3,7 +3,7 @@ import * as Styled from "./index.styles";
 
 interface Props {
   rows?: number;
-  onChange?: () => void;
+  onChange?: React.ChangeEventHandler<HTMLTextAreaElement>;
 }
 
 const Textarea = (props: Props) => {
