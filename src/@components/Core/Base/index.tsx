@@ -15,7 +15,7 @@ export type BaseProps = PropsWithChildren<{
   borderRadius?: number;
   boxShadow?: Property.BoxShadow;
   backgroundColor?: Color;
-  onClick: React.MouseEventHandler<HTMLDivElement> & ((e: Event) => void);
+  onClick?: React.MouseEventHandler<HTMLDivElement> & ((e: Event) => void);
 }>;
 
 const Base = (props: BaseProps) => {
