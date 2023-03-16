@@ -1,5 +1,6 @@
 export type ButtonVariant =
   | "purple"
+  | "white"
   | "whiteWithPurple"
   | "whiteWithGray"
   | "gray";

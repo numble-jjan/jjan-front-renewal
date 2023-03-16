@@ -15,6 +15,13 @@ export const buttonVariant: Record<ButtonVariant, ReturnType<typeof css>> = {
     background-color: ${color.dark_gray};
     color: ${color.white};
   `,
+  white: css`
+    background-color: ${color.white};
+    color: ${color.purple};
+    &:disabled {
+      color: rgba(104, 60, 237, 0.3);
+    }
+  `,
   whiteWithGray: css`
     background-color: ${color.white};
     border: 1px solid ${color.light_gray1};
