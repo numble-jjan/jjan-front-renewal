@@ -1,6 +1,9 @@
 import React from "react";
 
 import Avartar from "../Core/Avartar";
+import Button from "../Core/Button";
+import FlexItem from "../Core/FlexItem";
+import Text from "../Core/Text";
 import * as Styled from "./index.styles";
 
 interface Props {
@@ -20,14 +23,14 @@ const ReplyInput = ({ onClickSubmit, onChangeText }: Props) => {
         <Avartar variant="comment" src={avartarSrc} />
       </Styled.AvartarWrapper>
       <Styled.TextContainer alignItems="center" padding="8px">
-        <Styled.Textarea rows={3} onChange={onChangeText} />
-        <Styled.Button
-          color="purple"
-          variant="f4-regular"
-          onClick={onClickSubmit}
-        >
-          게시
-        </Styled.Button>
+        <FlexItem flex={1}>
+          <Styled.Textarea rows={3} onChange={onChangeText} />
+        </FlexItem>
+        <FlexItem>
+          <Button variant="white" height="l" onClick={onClickSubmit}>
+            <Text variant="f4-regular">게시</Text>
+          </Button>
+        </FlexItem>
       </Styled.TextContainer>
     </Styled.Container>
   );
