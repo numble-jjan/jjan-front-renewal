@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { FlexBox } from "../Core/Flexbox";
+import FlexBox from "../Core/Flexbox";
 import CoreTextArea from "../Core/Textarea";
 import Text from "../Core/Text";
 

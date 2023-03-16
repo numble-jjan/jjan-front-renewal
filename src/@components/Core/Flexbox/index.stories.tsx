@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import { FlexBox } from ".";
+import FlexBox from "./index";
 
 export default { title: "core/FlexBox", component: FlexBox } as ComponentMeta<
   typeof FlexBox

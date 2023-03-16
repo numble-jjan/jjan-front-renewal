@@ -1,7 +1,7 @@
 import React from "react";
 
 import Preview from "../Preview";
-import { FlexBox } from "@/@components/Core/Flexbox";
+import FlexBox from "@/@components/Core/Flexbox";
 
 interface PreviewListProps {
   files: File[];
