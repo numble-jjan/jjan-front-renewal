@@ -14,6 +14,8 @@ export interface FlexBoxProps extends BaseProps {
   rowGap?: Property.RowGap;
 }
 
-export const FlexBox = (props: FlexBoxProps) => {
+const FlexBox = (props: FlexBoxProps) => {
   return <Styled.FlexBox {...props}></Styled.FlexBox>;
 };
+
+export default FlexBox;
