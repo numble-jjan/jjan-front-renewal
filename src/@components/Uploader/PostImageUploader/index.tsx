@@ -3,7 +3,7 @@ import React from "react";
 import ImageUploader from "@components/Core/ImageUploader";
 import PreviewList from "./PreviewList";
 import Select from "./Select";
-import { FlexBox } from "@/@components/Core/Flexbox";
+import FlexBox from "@/@components/Core/Flexbox";
 
 import { useFile } from "@/hooks/useFile";
 

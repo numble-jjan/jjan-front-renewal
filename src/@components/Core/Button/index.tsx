@@ -8,6 +8,7 @@ export interface ButtonProps extends PropsWithChildren {
   height: ButtonHeight;
   width?: Property.Width;
   disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 const Button = ({ ...props }: ButtonProps) => {

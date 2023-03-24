@@ -1,5 +1,5 @@
 import React from "react";
-import { FlexBox } from "../Flexbox";
+import FlexBox from "../Flexbox";
 import FlexItem from "./index";
 import Text from "../Text";
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
