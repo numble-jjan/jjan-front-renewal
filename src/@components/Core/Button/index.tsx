@@ -1,14 +1,15 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import * as Styled from "./index.styles";
 import type { Property } from "csstype";
 import type { ButtonHeight, ButtonVariant } from "./types";
 
-export interface ButtonProps extends PropsWithChildren {
+import { BaseProps } from "../Base";
+
+export interface ButtonProps extends BaseProps {
   variant: ButtonVariant;
   height: ButtonHeight;
   width?: Property.Width;
   disabled?: boolean;
-  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 const Button = ({ ...props }: ButtonProps) => {
