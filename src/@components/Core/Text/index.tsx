@@ -1,10 +1,10 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import * as Styled from "./index.styles";
 import type { Property } from "csstype";
 import type { Color } from "@/styles/theme";
 import type { TextVariant } from "@/styles/textVariant";
 
-export interface TextProps extends PropsWithChildren {
+export interface TextProps {
   variant: TextVariant;
   margin?: Property.Margin;
   padding?: Property.Padding;
@@ -13,6 +13,7 @@ export interface TextProps extends PropsWithChildren {
   textAlign?: Property.TextAlign;
   inline?: boolean;
   lineHeight?: Property.LineHeight;
+  children: string;
 }
 
 const Text = (props: TextProps) => {
