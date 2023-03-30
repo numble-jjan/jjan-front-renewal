@@ -1,4 +1,4 @@
-import React from "react";
+import React, { EventHandler } from "react";
 import * as Styled from "./index.styles";
 
 import Text from "../Core/Text";
@@ -8,15 +8,15 @@ import FlexItem from "../Core/FlexItem";
 
 // todo : icon libarary로 추후에 교체
 import { ReactComponent as IconPrev } from "@/assets/icons/icon-prev.svg";
+import { ReactComponent as IconMeatball } from "@/assets/icons/icon-meatball.svg";
 
 interface Props {
   title: string;
-  rightIcon?: React.FC<React.SVGProps<SVGSVGElement>>;
+  hasMeatball?: boolean;
+  onClickMeatball?: EventHandler<React.MouseEvent<HTMLDivElement>>;
 }
 
-const Header = ({ title, rightIcon }: Props) => {
-  const RightIcon = rightIcon;
-
+const Header = ({ title, hasMeatball, onClickMeatball }: Props) => {
   return (
     <Styled.Container>
       <FlexBox alignItems={"center"}>
@@ -31,8 +31,12 @@ const Header = ({ title, rightIcon }: Props) => {
           </FlexBox>
         </FlexItem>
         <FlexItem>
-          <Styled.IconWrapper justifyContent={"center"} alignItems={"center"}>
-            {RightIcon && <RightIcon />}
+          <Styled.IconWrapper
+            justifyContent={"center"}
+            alignItems={"center"}
+            onClick={hasMeatball ? onClickMeatball : undefined}
+          >
+            {hasMeatball && <IconMeatball />}
           </Styled.IconWrapper>
         </FlexItem>
       </FlexBox>
