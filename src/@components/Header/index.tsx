@@ -10,7 +10,7 @@ import FlexItem from "../Core/FlexItem";
 import { ReactComponent as IconPrev } from "@/assets/icons/icon-prev.svg";
 import { ReactComponent as IconMeatball } from "@/assets/icons/icon-meatball.svg";
 
-interface Props {
+export interface Props {
   title: string;
   hasMeatball?: boolean;
   onClickMeatball?: EventHandler<React.MouseEvent<HTMLDivElement>>;

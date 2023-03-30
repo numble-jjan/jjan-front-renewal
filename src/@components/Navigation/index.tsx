@@ -41,7 +41,7 @@ const NavIcon = ({ text, icon, emphasis }: NavIconProps) => {
   );
 };
 
-const BottomNav = () => {
+const Navigation = () => {
   const icons = [
     { text: "프로필", icon: <ProfileIcon /> },
     { text: "추천 술집", icon: <LocationIcon /> },
@@ -67,4 +67,4 @@ const BottomNav = () => {
   );
 };
 
-export default BottomNav;
+export default Navigation;
