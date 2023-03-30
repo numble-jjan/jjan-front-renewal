@@ -20,6 +20,7 @@ const authRoutes = createRoutesFromElements(
 const settingRoutes = createRoutesFromElements(
   <Route path="setting">
     <Route path="profile" />
+    <Route path="nickname" />
     <Route path="location">
       <Route path="search" />
     </Route>
