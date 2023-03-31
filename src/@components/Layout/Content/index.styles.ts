@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import type { Props } from "./index";
 
-export const Container = styled.div`
+export const Container = styled.div<Props>`
+
   padding: 1rem;
-  padding-top: 48px;
-  padding-bottom: 70px;
+  margin-top: ${({ hasHeader }) => (hasHeader ? `48px` : `0px`)}
+  margin-bottom:  ${({ hasHeader }) => (hasHeader ? `70px` : `0px`)}
 `;
