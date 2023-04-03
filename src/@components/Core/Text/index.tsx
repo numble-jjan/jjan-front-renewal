@@ -13,7 +13,7 @@ export interface TextProps {
   textAlign?: Property.TextAlign;
   inline?: boolean;
   lineHeight?: Property.LineHeight;
-  children: string;
+  children: string | string[];
 }
 
 const Text = (props: TextProps) => {
