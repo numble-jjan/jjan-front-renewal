@@ -1,5 +1,5 @@
-import { Children, isValidElement } from "react";
 import type { ReactNode } from "react";
+import filterByType from "./filterByType";
 
 export default function getComponentByType(
   children: ReactNode,
@@ -7,8 +7,5 @@ export default function getComponentByType(
   num?: number,
 ) {
   if (num === undefined) num = 1;
-  const childrenArray = Children.toArray(children);
-  return childrenArray
-    .filter(child => isValidElement(child) && child.type === type)
-    .slice(0, num);
+  return filterByType(children, type).slice(0, num);
 }

@@ -1,12 +1,15 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useContext } from "react";
 import * as Styled from "./index.styles";
+import { layoutContext } from "../index";
 
-export interface Props {
-  hasHeader: boolean;
-}
+const Content = ({ children }: PropsWithChildren) => {
+  const { hasBottom, hasHeader } = useContext(layoutContext);
 
-const Content = ({ children, hasHeader }: PropsWithChildren<Props>) => {
-  return <Styled.Container hasHeader={hasHeader}>{children}</Styled.Container>;
+  return (
+    <Styled.Container hasHeader={hasHeader} hasBottom={hasBottom}>
+      {children}
+    </Styled.Container>
+  );
 };
 
 export default Content;
