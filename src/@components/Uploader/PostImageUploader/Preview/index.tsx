@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as Styled from "./index.styles";
-import { ReactComponent as Cancellation } from "@/assets/icons/icon-cancel.svg";
+import { ReactComponent as CancelIcon } from "@/assets/icons/icon-cancel.svg";
 
 interface PreviewProps {
   src: string;
@@ -10,16 +10,16 @@ interface PreviewProps {
 
 const Preview = ({ src, onDelete }: PreviewProps) => {
   return (
-    <Styled.Contaienr>
-      <Styled.AbsoultePosition>
+    <Styled.Container>
+      <Styled.AbsolutePosition>
         <Styled.Circle onClick={onDelete}>
-          <Cancellation />
+          <CancelIcon />
         </Styled.Circle>
         <Styled.ImageWrapper>
           <img src={src} />
         </Styled.ImageWrapper>
-      </Styled.AbsoultePosition>
-    </Styled.Contaienr>
+      </Styled.AbsolutePosition>
+    </Styled.Container>
   );
 };
 

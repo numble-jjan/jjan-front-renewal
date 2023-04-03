@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const Contaienr = styled.div`
+export const Container = styled.div`
   position: relative;
   width: 3.025rem;
   height: 3.025rem;
 `;
 
-export const AbsoultePosition = styled.div`
+export const AbsolutePosition = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;

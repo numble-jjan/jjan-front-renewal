@@ -7,7 +7,7 @@ interface SelectProps {
   onClick: () => void;
 }
 
-const Select = ({ onClick }: SelectProps) => {
+const ImageSelectButton = ({ onClick }: SelectProps) => {
   return (
     <Styled.Container onClick={onClick}>
       <Camera />
@@ -15,4 +15,4 @@ const Select = ({ onClick }: SelectProps) => {
   );
 };
 
-export default Select;
+export default ImageSelectButton;
