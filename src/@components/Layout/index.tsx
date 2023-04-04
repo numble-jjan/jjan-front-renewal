@@ -7,16 +7,16 @@ import Content from "./Content";
 
 import hasElementByType from "@/utils/hasElementByType";
 
-interface LayoutContext {
+interface LayoutContextState {
   hasHeader: boolean;
   hasBottom: boolean;
 }
-export const layoutContext = createContext<LayoutContext>({
+export const LayoutContext = createContext<LayoutContextState>({
   hasHeader: false,
   hasBottom: false,
 });
 export const useLayoutContext = () => {
-  const context = useContext(layoutContext);
+  const context = useContext(LayoutContext);
   return context;
 };
 
@@ -28,9 +28,9 @@ const Main = ({ children }: PropsWithChildren) => {
   const hasBottomNav = hasElementByType(children, BottomNavType);
 
   return (
-    <layoutContext.Provider value={{ hasHeader, hasBottom: hasBottomNav }}>
+    <LayoutContext.Provider value={{ hasHeader, hasBottom: hasBottomNav }}>
       <Styled.Container>{children}</Styled.Container>
-    </layoutContext.Provider>
+    </LayoutContext.Provider>
   );
 };
 
