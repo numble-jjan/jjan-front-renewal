@@ -7,7 +7,7 @@ import * as Styled from "./index.styles";
 export type InputType = InputHTMLAttributes<HTMLInputElement>;
 export type InputShape = "border" | "bottomLine";
 
-const InputBase = forwardRef<HTMLInputElement, InputType>(
+export const InputBase = forwardRef<HTMLInputElement, InputType>(
   (props: InputType, ref?: Ref<HTMLInputElement>) => {
     return <Styled.Root ref={ref} {...props} />;
   },
