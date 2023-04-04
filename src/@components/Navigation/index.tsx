@@ -26,6 +26,7 @@ const NavIcon = ({ text, icon, emphasis }: NavIconProps) => {
       alignItems="center"
       gap="6px"
       padding="12px"
+      backgroundColor="white"
     >
       {icon}
       <Text variant="f7-regular" color={emphasis ? "white" : "black"}>
