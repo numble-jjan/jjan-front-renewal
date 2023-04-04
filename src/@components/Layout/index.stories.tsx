@@ -5,7 +5,7 @@ import type { ComponentMeta } from "@storybook/react";
 interface Args {
   hasHeader: boolean;
   hasContent: boolean;
-  hasBottomNav: boolean;
+  hasBottom: boolean;
 }
 
 export default {
@@ -14,16 +14,16 @@ export default {
   argTypes: {
     hasHeader: { control: { type: "boolean" } },
     hasContent: { control: { type: "boolean" } },
-    hasBottomNav: { control: { type: "boolean" } },
+    hasBottom: { control: { type: "boolean" } },
   },
 } as ComponentMeta<typeof Layout>;
 
-export const Default = ({ hasBottomNav, hasContent, hasHeader }: Args) => {
+export const Default = ({ hasBottom, hasContent, hasHeader }: Args) => {
   return (
     <Layout>
       {hasHeader && <Layout.Header title="Storybook" hasMeatball={false} />}
       {hasContent && (
-        <Layout.Content>
+        <Layout.Content hasHeader={hasHeader} hasBottom={hasBottom}>
           <h1>This is Sample Page</h1>
           <p>This is sample page of Layout</p>
           <p>
@@ -122,12 +122,12 @@ export const Default = ({ hasBottomNav, hasContent, hasHeader }: Args) => {
           </p>
         </Layout.Content>
       )}
-      {hasBottomNav && <Layout.BottomNav />}
+      {hasBottom && <Layout.BottomNav />}
     </Layout>
   );
 };
 Default.args = {
-  hasBottomNav: true,
+  hasBottom: true,
   hasContent: true,
   hasHeader: true,
 } as Args;
