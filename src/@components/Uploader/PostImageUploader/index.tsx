@@ -1,30 +1,55 @@
 import React from "react";
 
-import ImageUploader from "@components/Core/ImageUploader";
-import PreviewList from "./PreviewList";
-import Select from "./Select";
 import FlexBox from "@/@components/Core/Flexbox";
+import PreviewList from "./PreviewList";
+import BaseUploader from "@/@components/Uploader/BaseUploader";
+import ImageSelectButton from "./ImageSelectButton";
 
 import { useFile } from "@/hooks/useFile";
 
-const ACCEPTABLE_TYPE = ["image/*"];
+import { validateImages } from "@/validation/rule";
+
+import { SUPPORTED_IMAGE_FORMATS } from "@/constants/file";
+
+const initialValues = {
+  postImages: [],
+};
 
 const PostImageUploader = () => {
-  const { files, isError, fileInputRef, handleAdd, handleRemove, handleClick } =
-    useFile({ mode: "multiple", rule: { maxLength: 3 } });
+  const {
+    files,
+    errors,
+    fileInputRef,
+    handleMultipleFilesAdd,
+    handleFileRemove,
+    handleClick,
+    runValidator,
+  } = useFile({
+    initialValues,
+    validate: validateImages,
+  });
+
+  const hasError = errors;
+  const errorMessage = errors?.message;
 
   return (
     <FlexBox flexDirection="column" gap="5px">
       <FlexBox flexDirection="row" gap="5px">
-        <Select onClick={handleClick} />
-        <PreviewList files={files} onDelete={handleRemove} />
+        <ImageSelectButton onClick={handleClick} />
+        <PreviewList
+          name="postImages"
+          files={files.postImages}
+          onDelete={handleFileRemove}
+        />
       </FlexBox>
-      {isError && <p>파일 업로드 중 에러가 발생하였습니다.</p>}
-      <ImageUploader
+      {hasError && <p>{errorMessage}</p>}
+      <BaseUploader
         mode="multiple"
-        setImage={handleAdd}
-        accept={ACCEPTABLE_TYPE}
-        fileInputRef={fileInputRef}
+        name="postImages"
+        onFileAdd={handleMultipleFilesAdd}
+        onValidate={runValidator}
+        accept={SUPPORTED_IMAGE_FORMATS.join()}
+        ref={fileInputRef}
       />
     </FlexBox>
   );
