@@ -7,11 +7,11 @@ import Content from "./Content";
 
 import hasElementByType from "@/utils/hasElementByType";
 
-interface LayoutContextState {
+interface LayoutContextType {
   hasHeader: boolean;
   hasBottom: boolean;
 }
-export const LayoutContext = createContext<LayoutContextState>({
+export const LayoutContext = createContext<LayoutContextType>({
   hasHeader: false,
   hasBottom: false,
 });
