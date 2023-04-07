@@ -6,11 +6,13 @@ import FlexBox from "../Core/Flexbox";
 import FlexItem from "../Core/FlexItem";
 import Text from "../Core/Text";
 
-import { ReactComponent as ProfileIcon } from "@/assets/icons/icon-profile-broken.svg";
-import { ReactComponent as LocationIcon } from "@/assets/icons/icon-location-broken.svg";
-import { ReactComponent as HomeIcon } from "@/assets/icons/icon-home-broken.svg";
-import { ReactComponent as InformationIcon } from "@/assets/icons/icon-information-broken.svg";
-import { ReactComponent as CommunityIcon } from "@/assets/icons/icon-community.svg";
+import {
+  IconBrokenUser,
+  IconBrokenLocation,
+  IconBrokenHome,
+  IconBrokenText,
+  IconBrokenUsersMore,
+} from "jjan-icon";
 
 interface NavIconProps {
   text: string;
@@ -44,11 +46,11 @@ const NavIcon = ({ text, icon, emphasis }: NavIconProps) => {
 
 const Navigation = () => {
   const icons = [
-    { text: "프로필", icon: <ProfileIcon /> },
-    { text: "추천 술집", icon: <LocationIcon /> },
-    { text: "홈", icon: <HomeIcon /> },
-    { text: "술정보", icon: <InformationIcon /> },
-    { text: "커뮤니티", icon: <CommunityIcon /> },
+    { text: "프로필", icon: <IconBrokenUser /> },
+    { text: "추천 술집", icon: <IconBrokenLocation /> },
+    { text: "홈", icon: <IconBrokenHome /> },
+    { text: "술정보", icon: <IconBrokenText /> },
+    { text: "커뮤니티", icon: <IconBrokenUsersMore /> },
   ];
 
   return (

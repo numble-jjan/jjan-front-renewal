@@ -3,9 +3,15 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Input from "./index";
 
-import { LOCATION, SEARCH } from "@/constants/icons";
+// import { ICON_1, ICON_2 } from "@/constants/icons"
 
-const icons = { Empty: null, LOCATION, SEARCH };
+import { IconBrokenHome, IconBrokenLocationPurple } from "jjan-icon";
+
+const icons = {
+  Empty: null,
+  ICON_1: IconBrokenHome,
+  ICON_2: IconBrokenLocationPurple,
+};
 
 export default {
   title: "Core/Input",
@@ -24,8 +30,8 @@ export default {
       control: {
         type: "radio",
         labels: {
-          LOCATION: "Location",
-          SEARCH: "Search",
+          ICON_1: "ICON_1",
+          ICON_2: "ICON_2",
         },
       },
     },
@@ -35,8 +41,8 @@ export default {
       control: {
         type: "radio",
         labels: {
-          LOCATION: "Location",
-          SEARCH: "Search",
+          ICON_1: "ICON_1",
+          ICON_2: "ICON_2",
         },
       },
     },
@@ -49,4 +55,5 @@ export const Default = Template.bind({});
 Default.args = {
   isValid: true,
   placeholder: "Placeholder",
+  // left: <IconBrokenHome />,
 };
