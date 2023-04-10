@@ -8,8 +8,8 @@ import { colorMap } from "@/styles/theme";
 import type { BaseProps } from "./index";
 
 export const Base = styled.div<BaseProps>(props => ({
-  width: props.width || "100%",
-  height: props.height || "100%",
+  width: props.width || "auto",
+  height: props.height || "auto",
   boxSizing: "border-box",
   position: props.position,
   display: props.display,
