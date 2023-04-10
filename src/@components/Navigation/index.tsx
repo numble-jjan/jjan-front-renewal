@@ -1,53 +1,11 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import * as Styled from "./index.styles";
 
 import Divider from "../Core/Divider";
 import FlexBox from "../Core/Flexbox";
-import FlexItem from "../Core/FlexItem";
-import Text from "../Core/Text";
+import NavIcon from "./NavIcon";
+
 import { NAV_ICONS } from "@/constants/navIcons";
-
-interface NavIconProps {
-  text: string;
-  defaultIcon: ReactNode;
-  activeIcon: ReactNode;
-  isLast: boolean;
-  isClicked: boolean;
-}
-
-const NavIcon = ({
-  text,
-  defaultIcon,
-  activeIcon,
-  isClicked,
-  isLast,
-}: NavIconProps) => {
-  const content = (
-    <FlexBox
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      gap="6px"
-      padding="12px"
-      backgroundColor="white"
-    >
-      {isClicked ? activeIcon : defaultIcon}
-      <Text
-        variant={isClicked ? "f7-bold" : "f7-regular"}
-        color={isLast ? "white" : isClicked ? "purple" : "black"}
-      >
-        {text}
-      </Text>
-    </FlexBox>
-  );
-
-  return (
-    <>
-      <FlexItem flex={1}>{content}</FlexItem>
-      {isLast && <Styled.LastIcon>{content}</Styled.LastIcon>}
-    </>
-  );
-};
 
 /**
  * todo :
@@ -65,8 +23,8 @@ const Navigation = () => {
             text={text}
             activeIcon={activeIcon}
             defaultIcon={defaultIcon}
-            isLast={index === self.length - 1}
             isClicked={false}
+            isLast={self.length - 1 === index}
           />
         ))}
       </FlexBox>
