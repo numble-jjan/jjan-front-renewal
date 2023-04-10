@@ -6,9 +6,7 @@ import Divider from "../Core/Divider";
 import FlexBox from "../Core/Flexbox";
 import FlexItem from "../Core/FlexItem";
 
-// todo : icon libarary로 추후에 교체
-import { ReactComponent as IconPrev } from "@/assets/icons/icon-prev.svg";
-import { ReactComponent as IconMeatball } from "@/assets/icons/icon-meatball.svg";
+import { IconMenuHorizontal } from "jjan-icon";
 
 export interface Props {
   title: string;
@@ -22,7 +20,7 @@ const Header = ({ title, hasMeatball, onClickMeatball }: Props) => {
       <FlexBox alignItems={"center"}>
         <FlexItem>
           <Styled.IconWrapper justifyContent={"center"} alignItems={"center"}>
-            <IconPrev />
+            <IconMenuHorizontal />
           </Styled.IconWrapper>
         </FlexItem>
         <FlexItem flex={1}>
@@ -36,7 +34,7 @@ const Header = ({ title, hasMeatball, onClickMeatball }: Props) => {
             alignItems={"center"}
             onClick={hasMeatball ? onClickMeatball : undefined}
           >
-            {hasMeatball && <IconMeatball />}
+            {hasMeatball && <IconMenuHorizontal />}
           </Styled.IconWrapper>
         </FlexItem>
       </FlexBox>
