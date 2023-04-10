@@ -1,12 +1,13 @@
 import React from "react";
-import * as Styled from "../index.styles";
+
+import Base from "@/@components/Core/Base";
 import Imgaes from "@/constants/images";
 
 const Logo = () => {
   return (
-    <Styled.MarginBottom margin={44}>
+    <Base margin={`0 0 44px 0`}>
       <img src={Imgaes.LOGO_SRC}></img>
-    </Styled.MarginBottom>
+    </Base>
   );
 };
 

@@ -6,7 +6,7 @@ import FlexBox from "@/@components/Core/Flexbox";
 import Logo from "./Logo";
 import Congratulations from "./Congratulations";
 import Introduction from "./Introduction";
-import SignUp from "./SignUp";
+import SignUpButton from "./SignUpButton";
 
 const Landing = () => {
   return (
@@ -16,11 +16,12 @@ const Landing = () => {
           justifyContent="center"
           alignItems="center"
           flexDirection="column"
+          height={"100%"}
         >
           <Logo />
           <Congratulations />
           <Introduction />
-          <SignUp />
+          <SignUpButton />
         </FlexBox>
       </Layout.Content>
     </Layout>
