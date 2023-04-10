@@ -41,7 +41,7 @@ export const buttonVariant: Record<ButtonVariant, ReturnType<typeof css>> = {
   `,
 };
 
-export const Container = styled.div<ButtonProps>`
+export const Container = styled.button<ButtonProps>`
   display: flex;
   justify-content: center;
   align-items: center;
