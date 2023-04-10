@@ -17,8 +17,8 @@ InputBase.displayName = "InputBase";
 
 interface IProps extends InputType {
   isValid?: boolean;
-  left?: string;
-  right?: string;
+  left?: React.FC<React.SVGProps<SVGSVGElement>>;
+  right?: React.FC<React.SVGProps<SVGSVGElement>>;
   shape: InputShape;
   ref?: Ref<HTMLInputElement>;
 }
@@ -26,11 +26,14 @@ interface IProps extends InputType {
 const Input = forwardRef<HTMLInputElement, IProps>(
   (props: IProps, ref?: Ref<HTMLInputElement>) => {
     const { shape, left, right, isValid } = props;
+    const Left = left;
+    const Right = right;
+
     return (
       <Styled.Container isValid={isValid} shape={shape}>
-        {left && <Styled.LeftImage src={left} />}
+        {Left && <Left />}
         <InputBase ref={ref} {...props} />
-        {right && <Styled.RightImage src={right} />}
+        {Right && <Right />}
       </Styled.Container>
     );
   },
