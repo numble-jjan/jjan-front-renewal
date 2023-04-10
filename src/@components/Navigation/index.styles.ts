@@ -4,7 +4,7 @@ import FlexItem from "../Core/FlexItem";
 export const Container = styled.div`
   position: relative;
 `;
-export const EmphasisIcon = styled(FlexItem)`
+export const LastIcon = styled(FlexItem)`
   position: absolute;
   width: 20%;
   height: 70px;
