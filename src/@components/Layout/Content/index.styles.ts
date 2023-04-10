@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{ hasHeader: boolean; hasBottom: boolean }>`
+export const Container = styled.section<{
+  hasHeader: boolean;
+  hasBottom: boolean;
+}>`
   /**
   * margin-bottom이 원하는 방식으로 작동하지 않아서 height값을 수정합니다.
   * 110px = NavIcon(60px) + Header(48px) + g,q와 같은 폰트가 가려지는 걸 막기위한 추가 여유분(2px)
