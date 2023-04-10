@@ -6,7 +6,7 @@ import Text from "@/@components/Core/Text";
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
-  title: "Components/Profile",
+  title: "Profile/Profile",
   component: Profile,
 } as ComponentMeta<typeof Profile>;
 
