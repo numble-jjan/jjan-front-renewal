@@ -1,11 +1,7 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
 import Input from "./index";
-
-// import { ICON_1, ICON_2 } from "@/constants/icons"
-
 import { IconBrokenHome, IconBrokenLocationPurple } from "jjan-icon";
+import type { Meta, StoryObj } from "@storybook/react";
 
 const icons = {
   Empty: null,
@@ -47,13 +43,14 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Input>;
+} as Meta<typeof Input>;
 
-const Template: ComponentStory<typeof Input> = args => <Input {...args} />;
+type Story = StoryObj<typeof Input>;
 
-export const Default = Template.bind({});
-Default.args = {
-  isValid: true,
-  placeholder: "Placeholder",
-  // left: <IconBrokenHome />,
+export const Default: Story = {
+  args: {
+    isValid: true,
+    placeholder: "Placeholder",
+  },
+  render: args => <Input {...args} />,
 };

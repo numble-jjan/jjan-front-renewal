@@ -1,18 +1,28 @@
 import React from "react";
 import Chip from "./index";
-import type { ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Core/Chip",
   component: Chip,
-} as ComponentMeta<typeof Chip>;
+} as Meta<typeof Chip>;
+
+type Story = StoryObj<typeof Chip>;
 
 const mockingEventHandler = () => null;
 
-export const Default = () => {
-  return <Chip onClickDelete={mockingEventHandler} text="test" />;
+export const Default: Story = {
+  args: {
+    onClickDelete: mockingEventHandler,
+    text: "text",
+  },
+  render: args => <Chip {...args}></Chip>,
 };
 
-export const WithCancellation = () => {
-  return <Chip onClickDelete={mockingEventHandler} text="test" cacellation />;
+export const WithCancellation: Story = {
+  args: {
+    onClickDelete: mockingEventHandler,
+    text: "text",
+  },
+  render: args => <Chip {...args}></Chip>,
 };

@@ -1,7 +1,6 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-
 import Divider from "./index";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { colorMap } from "@/styles/theme";
 
@@ -11,11 +10,13 @@ export default {
   argTypes: {
     color: { control: "select", options: Object.keys(colorMap) },
   },
-} as ComponentMeta<typeof Divider>;
+} as Meta<typeof Divider>;
 
-export const Default: ComponentStory<typeof Divider> = args => (
-  <Divider {...args} />
-);
-Default.args = {
-  color: "purple",
+type Story = StoryObj<typeof Divider>;
+
+export const Default: Story = {
+  args: {
+    color: "purple",
+  },
+  render: args => <Divider {...args} />,
 };

@@ -1,31 +1,30 @@
 import React from "react";
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
-import Base from "../Core/Base";
 import Navigation from "./index";
-import NavIcon from "./NavIcon";
-import { NAV_ICONS } from "@/constants/navIcons";
+import { colorMap } from "@/styles/theme";
+
+import { expect } from "@storybook/jest";
+import { within, userEvent } from "@storybook/testing-library";
 
 export default {
   title: "Navigation/Navigation",
   component: Navigation,
-} as ComponentMeta<typeof Navigation>;
+} as Meta<typeof Navigation>;
 
-export const Default = () => {
-  return <Navigation />;
-};
+type Story = StoryObj<typeof Navigation>;
 
-const [firstNavItem] = NAV_ICONS;
-const { activeIcon, defaultIcon, text } = firstNavItem;
-export const OneIcon: ComponentStory<typeof NavIcon> = props => {
-  return (
-    <Base position="relative">
-      <NavIcon {...props} defaultIcon={defaultIcon} activeIcon={activeIcon} />
-    </Base>
-  );
-};
-OneIcon.args = {
-  text,
-  isClicked: false,
-  isLast: false,
+export const Default: Story = {
+  render: () => {
+    return <Navigation />;
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const profileIcon = canvas.getByText("프로필");
+
+    await expect(profileIcon).toHaveStyle(`color:${colorMap.black}`);
+    await userEvent.click(profileIcon);
+    await expect(profileIcon).toHaveStyle(`color:${colorMap.purple}`);
+  },
 };
