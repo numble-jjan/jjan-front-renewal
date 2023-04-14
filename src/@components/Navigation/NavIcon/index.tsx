@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { MouseEventHandler, ReactNode } from "react";
 
 import * as Styled from "./index.styles";
 import FlexBox from "@/@components/Core/Flexbox";
@@ -11,6 +11,7 @@ interface NavIconProps {
   activeIcon: ReactNode;
   isClicked: boolean;
   isLast: boolean;
+  onClick: MouseEventHandler<HTMLOrSVGElement>;
 }
 
 const NavIcon = ({
@@ -19,6 +20,7 @@ const NavIcon = ({
   activeIcon,
   isClicked,
   isLast,
+  onClick,
 }: NavIconProps) => {
   const content = (
     <FlexBox
@@ -27,6 +29,7 @@ const NavIcon = ({
       alignItems="center"
       gap="6px"
       padding="12px"
+      onClick={onClick}
     >
       {isClicked ? activeIcon : defaultIcon}
       <Text
@@ -42,6 +45,7 @@ const NavIcon = ({
       justifyContent="center"
       alignItems="center"
       flexDirection="column"
+      onClick={onClick}
     >
       {isClicked ? activeIcon : defaultIcon}
       <Text variant={isClicked ? "f7-bold" : "f7-regular"} color="white">
