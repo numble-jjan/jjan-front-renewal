@@ -1,6 +1,6 @@
 import React from "react";
 import Avartar from "./index";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 const IMG_SAMPLES = {
   sample1: "./img-character.png",
@@ -21,40 +21,51 @@ export default {
       mapping: IMG_SAMPLES,
     },
   },
-} as ComponentMeta<typeof Avartar>;
+} as Meta<typeof Avartar>;
+type Story = StoryObj<typeof Avartar>;
 
-export const Comment: ComponentStory<typeof Avartar> = ({ ...args }) => {
-  return <Avartar {...args} variant="comment"></Avartar>;
-};
-Comment.args = {
-  src: IMG_SAMPLES.sample1,
-};
-
-export const Author: ComponentStory<typeof Avartar> = ({ ...args }) => {
-  return <Avartar {...args} variant="author"></Avartar>;
-};
-Author.args = {
-  src: IMG_SAMPLES.sample1,
+export const Comment: Story = {
+  args: {
+    src: IMG_SAMPLES.sample1,
+  },
+  render: args => {
+    return <Avartar {...args} variant="comment"></Avartar>;
+  },
 };
 
-export const Profile: ComponentStory<typeof Avartar> = ({ ...args }) => {
-  return <Avartar {...args} variant="profile"></Avartar>;
-};
-Profile.args = {
-  src: IMG_SAMPLES.sample1,
-};
-
-export const Setting: ComponentStory<typeof Avartar> = ({ ...args }) => {
-  return <Avartar {...args} variant="setting"></Avartar>;
-};
-Setting.args = {
-  src: IMG_SAMPLES.sample1,
+export const Author: Story = {
+  args: {
+    src: IMG_SAMPLES.sample1,
+  },
+  render: args => {
+    return <Avartar {...args} variant="author"></Avartar>;
+  },
 };
 
-export const Error: ComponentStory<typeof Avartar> = ({ ...args }) => {
-  return <Avartar {...args}></Avartar>;
+export const Profile: Story = {
+  args: {
+    src: IMG_SAMPLES.sample1,
+  },
+  render: args => {
+    return <Avartar {...args} variant="profile"></Avartar>;
+  },
 };
-Error.args = {
-  variant: "comment",
-  src: "",
+
+export const Setting: Story = {
+  args: {
+    src: IMG_SAMPLES.sample1,
+  },
+  render: args => {
+    return <Avartar {...args} variant="setting"></Avartar>;
+  },
+};
+
+export const Error: Story = {
+  args: {
+    variant: "comment",
+    src: "",
+  },
+  render: args => {
+    return <Avartar {...args} variant="author"></Avartar>;
+  },
 };

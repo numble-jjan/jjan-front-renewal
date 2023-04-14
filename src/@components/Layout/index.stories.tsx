@@ -1,29 +1,20 @@
 import React from "react";
 import Layout from "./index";
-import type { ComponentMeta } from "@storybook/react";
-
-interface Args {
-  hasHeader: boolean;
-  hasContent: boolean;
-  hasBottom: boolean;
-}
+import type { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Layout/Layout",
   component: Layout,
-  argTypes: {
-    hasHeader: { control: { type: "boolean" } },
-    hasContent: { control: { type: "boolean" } },
-    hasBottom: { control: { type: "boolean" } },
-  },
-} as ComponentMeta<typeof Layout>;
+} as Meta<typeof Layout>;
 
-export const Default = ({ hasBottom, hasContent, hasHeader }: Args) => {
-  return (
-    <Layout>
-      {hasHeader && <Layout.Header title="Storybook" hasMeatball={false} />}
-      {hasContent && (
-        <Layout.Content hasHeader={hasHeader} hasBottom={hasBottom}>
+type Story = StoryObj<typeof Layout>;
+
+export const Default: Story = {
+  render: () => {
+    return (
+      <Layout>
+        <Layout.Header title="Storybook" hasMeatball={false} />
+        <Layout.Content>
           <h1>This is Sample Page</h1>
           <p>This is sample page of Layout</p>
           <p>
@@ -121,13 +112,8 @@ export const Default = ({ hasBottom, hasContent, hasHeader }: Args) => {
             In eget nisl commodo nisi euismod fringilla ut eget dolor.
           </p>
         </Layout.Content>
-      )}
-      {hasBottom && <Layout.BottomNav />}
-    </Layout>
-  );
+        <Layout.BottomNav />
+      </Layout>
+    );
+  },
 };
-Default.args = {
-  hasBottom: true,
-  hasContent: true,
-  hasHeader: true,
-} as Args;

@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import ScrollBar from "./index";
 import Dummy from "./Dummy";
@@ -7,14 +7,16 @@ import Dummy from "./Dummy";
 export default {
   title: "ScrollBar/ScrollBar",
   component: ScrollBar,
-} as ComponentMeta<typeof ScrollBar>;
+} as Meta<typeof ScrollBar>;
 
-const Template: ComponentStory<typeof ScrollBar> = args => (
-  <div style={{ height: "800px" }}>
-    <ScrollBar {...args}>
-      <Dummy />
-    </ScrollBar>
-  </div>
-);
+type Story = StoryObj<typeof ScrollBar>;
 
-export const Primary = Template.bind({});
+export const Default: Story = {
+  render: args => (
+    <div style={{ height: "800px" }}>
+      <ScrollBar {...args}>
+        <Dummy />
+      </ScrollBar>
+    </div>
+  ),
+};

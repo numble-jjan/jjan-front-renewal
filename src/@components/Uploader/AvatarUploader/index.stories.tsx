@@ -1,15 +1,15 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import AvatarUploader from "./index";
 
 export default {
   title: "Uploader/AvatarUploader",
   component: AvatarUploader,
-} as ComponentMeta<typeof AvatarUploader>;
+} as Meta<typeof AvatarUploader>;
 
-const Template: ComponentStory<typeof AvatarUploader> = () => (
-  <AvatarUploader />
-);
+type Story = StoryObj;
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  render: () => <AvatarUploader />,
+};

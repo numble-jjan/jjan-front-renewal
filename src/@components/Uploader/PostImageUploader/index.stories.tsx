@@ -1,15 +1,15 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import PostImageUploader from "./index";
 
 export default {
   title: "Uploader/PostImageUploader",
   component: PostImageUploader,
-} as ComponentMeta<typeof PostImageUploader>;
+} as Meta<typeof PostImageUploader>;
 
-const Template: ComponentStory<typeof PostImageUploader> = () => (
-  <PostImageUploader />
-);
+type Story = StoryObj<typeof PostImageUploader>;
 
-export const Default = Template.bind({});
+export const Default: Story = {
+  render: () => <PostImageUploader />,
+};

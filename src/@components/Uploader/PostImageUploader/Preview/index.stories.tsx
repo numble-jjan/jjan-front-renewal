@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import Preview from "./index";
 
@@ -15,11 +15,11 @@ const IMG_SAMPLES = {
 export default {
   title: "Uploader/PostImageUploader/Post/Preview",
   component: Preview,
-} as ComponentMeta<typeof Preview>;
+} as Meta<typeof Preview>;
 
-const Template: ComponentStory<typeof Preview> = args => <Preview {...args} />;
+type Story = StoryObj<typeof Preview>;
 
-export const Default = Template.bind({});
-Default.args = {
-  src: IMG_SAMPLES.sample1,
+export const Default: Story = {
+  args: { src: IMG_SAMPLES.sample1 },
+  render: args => <Preview {...args} />,
 };

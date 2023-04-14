@@ -1,12 +1,16 @@
 import React from "react";
 import ReplyInput from "./index";
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 export default {
-  title: "ReplyInput / ReplyInput",
+  title: "ReplyInput/ReplyInput",
   component: ReplyInput,
-} as ComponentMeta<typeof ReplyInput>;
+} as Meta<typeof ReplyInput>;
 
-export const Default: ComponentStory<typeof ReplyInput> = args => {
-  return <ReplyInput {...args} />;
+type Story = StoryObj<typeof ReplyInput>;
+
+export const Default: Story = {
+  render: args => {
+    return <ReplyInput {...args} />;
+  },
 };

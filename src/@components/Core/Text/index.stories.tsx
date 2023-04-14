@@ -1,7 +1,7 @@
 import React from "react";
 import Text from "./index";
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
 import textVariantMap from "@/styles/textVariant";
+import type { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Core/Text",
@@ -9,12 +9,16 @@ export default {
   argTypes: {
     variant: { control: "select", options: Object.keys(textVariantMap) },
   },
-} as ComponentMeta<typeof Text>;
+} as Meta<typeof Text>;
 
-export const Default: ComponentStory<typeof Text> = args => {
-  return <Text {...args} />;
-};
-Default.args = {
-  variant: "f4-bold",
-  children: "테스트용 텍스트입니다.",
+type Story = StoryObj<typeof Text>;
+
+export const Default: Story = {
+  args: {
+    variant: "f4-bold",
+    children: "테스트용 텍스트입니다.",
+  },
+  render: args => {
+    return <Text {...args} />;
+  },
 };

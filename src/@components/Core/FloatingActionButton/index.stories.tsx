@@ -1,6 +1,6 @@
 import React from "react";
 import FloatingActionButton from "./index";
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 import { ReactComponent as WriteIcon } from "@/assets/icons/icon-write.svg";
 import { ReactComponent as UpIcon } from "@/assets/icons/icon-up.svg";
@@ -20,19 +20,21 @@ export default {
       mapping: IconMap,
     },
   },
-} as ComponentMeta<typeof FloatingActionButton>;
+} as Meta<typeof FloatingActionButton>;
 
-export const Default: ComponentStory<typeof FloatingActionButton> = args => (
-  <FloatingActionButton {...args} />
-);
+type Story = StoryObj<typeof FloatingActionButton>;
 
-export const Small: ComponentStory<typeof FloatingActionButton> = args => (
-  <FloatingActionButton {...args} variant="small" />
-);
+export const Default: Story = {
+  render: args => <FloatingActionButton {...args} />,
+};
 
-export const Medium: ComponentStory<typeof FloatingActionButton> = args => (
-  <FloatingActionButton {...args} variant="medium" />
-);
-Medium.args = {
-  element: WriteIcon,
+export const Small: Story = {
+  render: args => <FloatingActionButton {...args} variant="small" />,
+};
+
+export const Medium: Story = {
+  args: {
+    element: WriteIcon,
+  },
+  render: args => <FloatingActionButton {...args} variant="medium" />,
 };

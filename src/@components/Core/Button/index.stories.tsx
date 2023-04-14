@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./index";
 import { buttonVariant, buttonHeight } from "./index.styles";
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Core/Button",
@@ -10,13 +10,15 @@ export default {
     height: { control: "radio", options: Object.keys(buttonHeight) },
     variant: { control: "select", options: Object.keys(buttonVariant) },
   },
-} as ComponentMeta<typeof Button>;
+} as Meta<typeof Button>;
 
-export const Default: ComponentStory<typeof Button> = args => (
-  <Button {...args} />
-);
-Default.args = {
-  variant: "purple",
-  height: "l",
-  children: "Button",
+type Story = StoryObj<typeof Button>;
+
+export const Default: Story = {
+  args: {
+    variant: "purple",
+    height: "l",
+    children: "Button",
+  },
+  render: args => <Button {...args} />,
 };

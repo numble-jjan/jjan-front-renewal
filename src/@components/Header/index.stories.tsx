@@ -1,15 +1,19 @@
 import React from "react";
 import Header from "./index";
-import type { ComponentMeta, ComponentStory } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Header/Header",
   component: Header,
-} as ComponentMeta<typeof Header>;
+} as Meta<typeof Header>;
 
-export const Default: ComponentStory<typeof Header> = args => {
-  return <Header {...args} />;
-};
-Default.args = {
-  title: "Sample",
+type Story = StoryObj<typeof Header>;
+
+export const Default: Story = {
+  args: {
+    title: "Sample",
+  },
+  render: args => {
+    return <Header {...args} />;
+  },
 };
