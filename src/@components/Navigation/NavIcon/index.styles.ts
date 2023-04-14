@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import FlexBox from "@/@components/Core/Flexbox";
 
+export const FlexBoxWithPointer = styled(FlexBox)`
+  cursor: pointer;
+`;
+
 export const LastIcon = styled(FlexBox)`
   position: absolute;
   width: 20%;
@@ -8,6 +12,7 @@ export const LastIcon = styled(FlexBox)`
   background: linear-gradient(135deg, #683ced 0%, #925ce9 100%);
   right: 0;
   bottom: 0;
+  cursor: pointer;
   & > svg {
     width: 32px;
     height: 32px;

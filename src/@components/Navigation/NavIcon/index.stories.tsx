@@ -2,6 +2,7 @@ import React from "react";
 import NavIcon from "./index";
 import Base from "@/@components/Core/Base";
 
+import { expect } from "@storybook/jest";
 import { within } from "@storybook/testing-library";
 
 import { NAV_ICONS } from "@/constants/navIcons";
@@ -32,6 +33,7 @@ export const Default: Story = {
   ),
   play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
-    await canvas.findByText(args.text);
+    const icon = canvas.getByText(args.text);
+    await expect(icon).toBeInTheDocument();
   },
 };
