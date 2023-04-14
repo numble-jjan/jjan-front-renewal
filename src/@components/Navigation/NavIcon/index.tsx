@@ -1,7 +1,6 @@
 import React, { MouseEventHandler, ReactNode } from "react";
 
 import * as Styled from "./index.styles";
-import FlexBox from "@/@components/Core/Flexbox";
 import FlexItem from "@/@components/Core/FlexItem";
 import Text from "@/@components/Core/Text";
 
@@ -23,7 +22,7 @@ const NavIcon = ({
   onClick,
 }: NavIconProps) => {
   const content = (
-    <FlexBox
+    <Styled.FlexBoxWithPointer
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
@@ -38,7 +37,7 @@ const NavIcon = ({
       >
         {text}
       </Text>
-    </FlexBox>
+    </Styled.FlexBoxWithPointer>
   );
   const lastIcon = (
     <Styled.LastIcon
