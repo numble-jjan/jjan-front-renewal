@@ -55,7 +55,7 @@ const NavIcon = ({
 
   return (
     <>
-      <FlexItem flex={1}>{content}</FlexItem>
+      <FlexItem flex={1}>{!isLast && content}</FlexItem>
       {isLast && lastIcon}
     </>
   );
