@@ -9,5 +9,9 @@ export default interface HttpHandler {
     config?: RequestConfig,
   ): Promise<T>;
   delete<T>(url: string, config?: RequestConfig): Promise<T>;
-  patch<T, D>(url: string, data?: D, config?: RequestConfig): Promise<T>;
+  patch<T, D = object>(
+    url: string,
+    data?: D,
+    config?: RequestConfig,
+  ): Promise<T>;
 }
